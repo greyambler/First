@@ -107,14 +107,7 @@ class Obj_Alarms extends React.Component {
       }
       else {
          return null;
-         /*         return (
-                     <Singl_Alarm _X={this.state._X} _Y={this.state._Y}
-                        data={this.state.data}
-                        obj_color_val={this.props.obj_color_val}
-                        obj_color_rep={this.props.obj_color_rep}
-                     />
-                  );
-         */
+
       }
    }
 }
