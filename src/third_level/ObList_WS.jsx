@@ -77,22 +77,19 @@ class ObList_WS extends React.Component {
                   let r1 = (((N_Test + 1) % 4) == 0) ? 1 : (N_Test + 1) % 4;
                   let r2 = (((N_Test + 2) % 4) == 0) ? 1 : (N_Test + 2) % 4;
                   let r3 = (((N_Test + 3) % 4) == 0) ? 1 : (N_Test + 3) % 4;
+                  N_Test = (((N_Test + 1) % 4) == 0) ? 1 : (N_Test + 1) % 4;
 
+                  let Test_Val = '{"id":"f09de2cd-56e9-4f0e-a822-232e9a7c4d0c",' +
+                     '"alarms":' +
+                     '[{"tp":2,"stat":[' + r1 + ',' + N_Test + ']},' +
+                     '{"tp":5,"stat":[' + r2 + ',' + r1 + ']},' +
+                     '{"tp":6,"stat":[' + r3 + ',' + r2 + ']},' +
+                     '{"tp":3,"stat":[' + r1 + ',' + r3 + ']}]}';
 
+                  this.setState({ data: Test_Val });
 
-                  this.setState({
-                     data: '{"id":"f09de2cd-56e9-4f0e-a822-232e9a7c4d0c",' +
-                        '"alarms":' +
-                        '[{"tp":2,"stat":[' + r1 + ',' + N_Test + ']},' +
-                        '{"tp":5,"stat":[' + r2 + ',' + r1 + ']},' +
-                        '{"tp":6,"stat":[' + r3 + ',' + r2 + ']},' +
-                        '{"tp":3,"stat":[' + r1 + ',' + r3 + ']}]}'
-                  });
-                  N_Test = (((N_Test + 1) % 4) == 0) ? 1 : (N_Test == 0) % 4;
                   /**Test*******************************************/
-                  //this.add_messages("\n" + this.state.data);
-                  let mess = this.state.messages.concat("\n[ №" + InDex + ";  " + get_Date() + " ] " + e);
-                  this.add_messages("\n" + mess);
+                  this.add_messages("\n" + this.state.data);
                }
             }
          }
@@ -107,16 +104,6 @@ class ObList_WS extends React.Component {
          InDex = 0;
          this.setState({ messages: "" })
          this.add_messages("\n\tOnOpen(e)");
-
-
-
-         /* 
-         let _te_Mess = document.getElementById("te_Mess");
-
-         if (_te_Mess != null) {
-            _te_Mess.value = null;
-         }*/
-
       }
    }
    stop_ws(e) {
