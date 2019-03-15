@@ -54,12 +54,9 @@ class ObList_WS extends React.Component {
       this.start_ws = this.start_ws.bind(this);
       this.stop_ws = this.stop_ws.bind(this);
       this.OnOpen = this.OnOpen.bind(this);
-      //this.display = this.display.bind(this);
       this.state = {
-         messages: [],
-         color_val: 'red',
-         color_rep: 'green',
          data: null,
+         messages: [],
       };
    }
    start_ws(e) {
