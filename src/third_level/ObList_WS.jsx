@@ -7,45 +7,17 @@ import Konva from 'konva';
 import Set_Stage from '../third_level/Set_Stage.jsx'
 
 import get_Date from '../core/get_Date.jsx'
+import makeCounter from '../core/makeCounter.jsx'
 import get_Json_String from '../core/get_Json_String.jsx'
-
+import TR_Azs from './TR_Azs.jsx'
+import TR_Stop from './TR_Stop.jsx'
 
 let Ws;//'ws://172.23.16.125:8000/dpws-1.0-SNAPSHOT/alws');
 let MS;
 let connection;
-let InDex = 0;
-
 let N_Test = 1;
 
-function TR_Azs(e) {
-   const List = e.List;
-   const Numb = List.length;
-   const Proc = 100 / Numb + "%";
-   return (
-      <tr>
-         {List.map(el => (
-            <td key={el.id} width={Proc} className="td_WS">
-               <button width={Proc} className="Def_button"
-                  id={el.id} onClick={e.on_Click} >{el.nm}</button>
-            </td>
-         ))}
-      </tr>
-   );
-}
-
-function TR_Stop(e) {
-   const List = e.List;
-   const Numb = List.length;
-   const Proc = 100 / Numb + "%";
-   return (
-      <tr>
-         <td key="0" width={Proc}>
-            <button width={Proc} className="Def_button" id="0" onClick={e.on_Click} >Stop</button>
-         </td>
-      </tr>
-   );
-}
-
+var counter = makeCounter();
 let OldStart = "";
 class ObList_WS extends React.Component {
    constructor(props) {
@@ -101,7 +73,7 @@ class ObList_WS extends React.Component {
    OnOpen(e) {
       if (MS != null && connection.OPEN) {
          connection.send(MS);
-         InDex = 0;
+         counter.set(1);
          this.setState({ messages: "" })
          this.add_messages("\n\tOnOpen(e)");
       }
@@ -116,27 +88,13 @@ class ObList_WS extends React.Component {
    }
    add_messages(e) {
       if (e != null) {
-         //this.setState({ messages: this.state.messages.concat("\n[ №" + InDex + ";  " + get_Date() + " ] " + e) })
-         
-         this.display(e);
          this.setState({
-            color_val: Konva.Util.getRandomColor(),
-            color_rep: Konva.Util.getRandomColor(),
+            messages: this.state.messages.concat("\n[ №" +
+               counter() + ";  " + get_Date() + " ]\n " + e)
          });
       }
    }
 
-
-
-   /**/
-   display(e) {
-      if (e != null) {
-         InDex++;
-         this.setState({ messages: this.state.messages.concat("\n[ №" + InDex + ";  " +
-          get_Date() + " ]" + e) })
-      }
-   }
-   
    render() {
       const List = this.props.obLists;
       const Numb = List.length;
