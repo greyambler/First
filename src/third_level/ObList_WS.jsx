@@ -90,7 +90,7 @@ class ObList_WS extends React.Component {
       if (e != null) {
          this.setState({
             messages: this.state.messages.concat("\n[ №" +
-               counter() + ";  " + get_Date() + " ]\n " + e)
+               counter() + ";  " + get_Date() + " ]\n " + e + "\n")
          });
       }
    }
