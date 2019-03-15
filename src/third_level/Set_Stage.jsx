@@ -87,11 +87,10 @@ class Obj_Alarms extends React.Component {
                )
                Singl_Alarm_Mas[index] = r_Singl_Alarm.render();
             }
-            //this.setState({ data: this.props.data });
          } else {
             Singl_Alarm_Mas = null;
-            //this.setState({ data: this.props.data });
          }
+         this.setState({ data: this.props.data });
       }
    }
 
@@ -107,14 +106,7 @@ class Obj_Alarms extends React.Component {
       }
       else {
          return null;
-         /*         return (
-                     <Singl_Alarm _X={this.state._X} _Y={this.state._Y}
-                        data={this.state.data}
-                        obj_color_val={this.props.obj_color_val}
-                        obj_color_rep={this.props.obj_color_rep}
-                     />
-                  );
-         */
+
       }
    }
 }
@@ -141,10 +133,7 @@ class Set_Stage extends Component {
                <AZS_Image _W={_W_I} _H={_H} _X={_X_s + 1} _Y={_Y_1} />
             </Layer>
             <Obj_Alarms _X={_X_1} _Y={_Y_1}
-               data={this.props.data}
-
-               obj_color_val={this.props.obj_color_val}
-               obj_color_rep={this.props.obj_color_rep} />
+               data={this.props.data}/>
          </Stage>
       );
    }
