@@ -145,7 +145,7 @@ close_td {
 .te_Mess {
    font-size: 14px;
    font-weight: 600;
-   height: 120px;
+   height: 100px;
    width: 100%;
 }
 
@@ -160,3 +160,7 @@ close_td {
 }
 
 */
+
+.NumList{
+   padding-left: 24px;
+}

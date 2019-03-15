@@ -1,8 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Fuel from './first_level/Fuel.jsx'             // first_level
-import TpList from './first_level/TpList.jsx'         // first_level
-import AzsList from './first_level/AzsList.jsx'       // first_level
+
+import N_List from './core/N_List.jsx'       // first_level
+
+//import Fuel from './first_level/Fuel.jsx'             // first_level
+//import TpList from './first_level/TpList.jsx'         // first_level
+//import AzsList from './first_level/AzsList.jsx'       // first_level
 import F_L_Json from './first_level/F_L_Json.jsx'       // first_level
 
 import ObList from './second_level/ObList.jsx'        // second_level
@@ -30,13 +33,13 @@ class MainWindow extends React.Component {
                            </tr>
                            <tr>
                               <td>
-                                 <AzsList obList={Objest.obList} />
+                                 <N_List ListVal={Objest.obList} />
                               </td>
                               <td>
-                                 <Fuel fuels={Objest.fuel} />
+                                 <N_List ListVal={Objest.fuel} />
                               </td>
                               <td>
-                                 <TpList tpLists={Objest.tpList} />
+                                 <N_List ListVal={Objest.tpList} />
                               </td>
                               <td>
                                  <F_L_Json Objests={this.Objest} />
@@ -62,5 +65,6 @@ class MainWindow extends React.Component {
 
 export default MainWindow;
 /*
+
 
 */
