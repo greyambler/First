@@ -1,22 +1,21 @@
 import React from 'react';
 
+import makeCounter from '../core/makeCounter.jsx'
+
+var counter = makeCounter();
 class Fuel extends React.Component {
    //{"id":5,"nm":"Аи-98","fu":"98"}
    render() {
       const List = this.props.fuels;
       return (
-         <table className="Def_table_FT">
-            <tbody>
+         
+            List.map(el => (
                <tr>
-                  <th colSpan={List.length}>Топливо (Fuel)</th>
+                  <td>{el.id}</td>
+                  <td key={el.id}>{el.nm}</td>
                </tr>
-               <tr>
-                  {List.map(el => (
-                     <td key={el.id}>{el.nm}</td>
-                  ))}
-               </tr>
-            </tbody>
-         </table>
+            ))
+         
       );
    }
 };

@@ -5,18 +5,14 @@ class TpList extends React.Component {
    render() {
       const List = this.props.tpLists;
       return (
-         <table className="Def_table_FT">
-            <tbody>
+         <td>
+            {List.map(el => (
                <tr>
-                  <th colSpan={List.length}>Оборудование (TpList)</th>
+                  <td align="left">{el.id}</td>
+                  <td key={el.id} align="left">{el.nm}</td>
                </tr>
-               <tr >
-                  {List.map(el => (
-                     <td key={el.id} align="center">{el.nm}</td>
-                  ))}
-               </tr>
-            </tbody>
-         </table>
+            ))}
+         </td>
       );
    }
 }

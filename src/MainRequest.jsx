@@ -17,7 +17,9 @@ class MainRequest extends React.Component {
       try {
          var response = await fetch(myRequest);
          if (response.ok) {
+
             const Jsons = await response.json();
+
             this.setState({ Objest: Jsons });
          }
          else {
@@ -30,10 +32,11 @@ class MainRequest extends React.Component {
    }
    render() {
       const _Objects = this.state.Objest;
+      const _J_text = this.state.j_text;
       return (
          <div>
             {_Objects != null ?
-               <MainWindow objects={_Objects} Rss={Rss} ws={ws}/>
+               <MainWindow objects={_Objects} Rss={Rss} ws={ws} />
                :
                <h1>Нет связи с сервером!!</h1>
             }

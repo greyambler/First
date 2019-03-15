@@ -62,19 +62,39 @@ footer {
 
 .Def_table, .Def_button, .te_Mess, .f_table1, .f_table2 {
    width: 100%;
-   /*background: #008B8B;*/
-}
-
-.Def_table_FT {
-   width: 100%;
-   height: 50px;
-   /*
+   /*background: #008B8B;
    border: 0.3px solid black;
    */
 }
 
+.Par_Def_table_FT {
+   /*height: 200px;*/
+   width: 100%;
+   border: 0.3px solid black;
+   height: 400px;
+}
+
+.Def_table_FT {
+   
+   width: 100%;
+   /*
+   height: 50px;
+  
+   */
+   border: 0.1px solid rgb(2, 155, 155);
+   ;
+}
+
 .Def_table_Pol {
    width: 50%;
+}
+
+.Def_table_Pol {
+   width: 50%;
+}
+
+.tr_ListLeft {
+   border: 10.3px solid black;
 }
 
 th {
@@ -91,14 +111,16 @@ th {
 
 .td_WS {
    width: 25%;
-   
 }
 
-/*
+
 td{
-   border: 1px solid black;
+   vertical-align:top;
+   min-width: 35px;
+   padding-left: 2px;
+   /*border: 1px solid black;*/
 }
-*/
+/**/
 
 close_td {
    padding: 5px;
@@ -123,10 +145,12 @@ close_td {
 .te_Mess {
    font-size: 14px;
    font-weight: 600;
-   height: 200px;
+   height: 120px;
+   width: 100%;
 }
 
 /********************Графика***************************/
+
 /*
 
 .t_Stage {
