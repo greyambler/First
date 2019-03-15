@@ -24,8 +24,6 @@ class AZS_Image extends React.Component {
    componentDidMount() {
       const image = new window.Image();
       image.src = '/images/azk3.jpg';
-      //image.width = '50';
-      //image.height = '50';
       image.onload = () => {
          this.setState({
             image: image
@@ -61,7 +59,7 @@ class Obj_Alarms extends React.Component {
       if (this.props.data !== prevProps.data) {
 
          if (this.props.data != null) {
-         
+            /** сообщение в message *
             InDex++;
             let _te_Mess = document.getElementById("te_Mess");
             if (_te_Mess != null) {
@@ -69,7 +67,7 @@ class Obj_Alarms extends React.Component {
                Str_Old = Str_Old + "\n[ №" + InDex + ";  " + get_Date() + " ]";
                _te_Mess.value = Str_Old;
             }
-
+            ** */
             Singl_Alarm_Mas = new Array();
 
             var Obj = JSON.parse(this.props.data);
