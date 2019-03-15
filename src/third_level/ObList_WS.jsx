@@ -164,9 +164,6 @@ class ObList_WS extends React.Component {
                         <Set_Stage id="set_Stage"
                            obList_WS={this}
                            data={this.state.data}
-                           obj_color_val={this.state.color_val}
-                           obj_color_rep={this.state.color_rep}
-
                         />
                      </td>
                   </tr>
