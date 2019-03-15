@@ -17,11 +17,14 @@ class MainWindow extends React.Component {
       let Objest = this.props.objects;
       let Rss = this.props.Rss;
       let ws = this.props.ws;
+
+
       return (
          <div>
             {Objest != null ?
                (
                   <div>
+
                      <table className="Def_table_FT">
                         <caption><h3>Справочники</h3></caption>
                         <tbody>
@@ -42,10 +45,9 @@ class MainWindow extends React.Component {
                                  <N_List ListVal={Objest.tpList} />
                               </td>
                               <td>
-                                 <F_L_Json Objests={this.Objest} />
+                                 <F_L_Json Objests={Objest} />
                               </td>
                            </tr>
-
                         </tbody>
                      </table>
 

@@ -32,7 +32,8 @@ class MainRequest extends React.Component {
    }
    render() {
       const _Objects = this.state.Objest;
-      const _J_text = this.state.j_text;
+      
+
       return (
          <div>
             {_Objects != null ?
