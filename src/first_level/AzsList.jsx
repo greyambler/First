@@ -11,7 +11,7 @@ class AzsList extends React.Component {
 
       this.setState({ 'List': prevProps.obList })
    }
-   Get_str() {
+  Get_str() {
       let Mes = '';
       if (this.state.List != null) {
          for (const iterator of this.state.List) {
