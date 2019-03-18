@@ -11,6 +11,8 @@ import makeCounter from '../core/makeCounter.jsx'
 import get_Json_String from '../core/get_Json_String.jsx'
 import TR_Azs from './TR_Azs.jsx'
 import TR_Stop from './TR_Stop.jsx'
+import List_ViewAZSs from './List_ViewAZSs.jsx'   // third_level
+
 
 let Ws;//'ws://172.23.16.125:8000/dpws-1.0-SNAPSHOT/alws');
 let MS;
@@ -19,6 +21,7 @@ let N_Test = 1;
 
 var counter = makeCounter();
 let OldStart = "";
+
 class ObList_WS extends React.Component {
    constructor(props) {
       super(props);
@@ -43,7 +46,7 @@ class ObList_WS extends React.Component {
             connection.onmessage = evt => {
 
                if (evt.data != null) {
-                  //this.setState({ data: evt.data })// Рабочий
+                  this.setState({ data: evt.data })// Рабочий
 
                   /**Test*******************************************/
                   let r1 = (((N_Test + 1) % 4) == 0) ? 1 : (N_Test + 1) % 4;
@@ -103,6 +106,17 @@ class ObList_WS extends React.Component {
 
       return (
          <div>
+
+            <List_ViewAZSs data={this.state.data} List={List} />
+
+            <br />
+            <br />
+
+            <br />
+            <br />
+
+
+
             <table className="Def_table" key="AZSz">
                <caption className="tb_dvcscaption"><h4>Третий уровень запроса</h4></caption>
                <tbody>
@@ -118,12 +132,6 @@ class ObList_WS extends React.Component {
                      <td colSpan={Numb}>
                         <textarea id="te_Mess" ref="te_Mess" className="te_Mess" defaultValue={this.state.messages} />
                      </td>
-                     <td colSpan={Numb} valign="top">
-                        <Set_Stage id="set_Stage"
-                           obList_WS={this}
-                           data={this.state.data}
-                        />
-                     </td>
                   </tr>
                </tbody>
             </table>
@@ -134,3 +142,19 @@ class ObList_WS extends React.Component {
 
 
 export default ObList_WS;
+
+/*
+<List_ViewAZSs obList_WS={this} data={this.state.data} />
+
+obList_WS={this}
+
+
+
+<td colSpan={Numb} valign="top">
+                        <Set_Stage id="set_Stage"
+                           name={List[0].nm}
+                           obList_WS={this}
+                           data={this.state.data}
+                        />
+                     </td>
+*/

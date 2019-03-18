@@ -10,7 +10,7 @@ import MainRequest from './MainRequest.jsx'   // main
 ReactDOM.render(
    <div>
       <MainRequest />
-      <br />
+      <br/>
    </div >,
    document.getElementById('root')
 );

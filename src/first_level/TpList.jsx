@@ -23,10 +23,10 @@ class TpList extends React.Component {
    render() {
       if (this.state.List != null) {
          return (
-            <ol className="Fuels">
+            <ol className="TpList">
                {
                   this.state.List.map(el => (
-                     <li key={'Fuels_li ' + el.id}>{el.nm}</li>
+                     <li key={'TpList_li ' + el.id}>{el.nm}</li>
                   ))
                }
             </ol>

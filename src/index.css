@@ -161,6 +161,6 @@ close_td {
 
 */
 
-.NumList, .AzsList, .Fuels{
+.NumList, .AzsList, .Fuels, .TpList{
    padding-left: 24px;
 }

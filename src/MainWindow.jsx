@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import N_List from './core/N_List.jsx'       // first_level
+//import N_List from './core/N_List.jsx'       // first_level
 import Text_A from './core/Text_A.jsx'       // first_level
 
 import Fuels from './first_level/Fuels.jsx'             // first_level
 import TpList from './first_level/TpList.jsx'         // first_level
 import AzsList from './first_level/AzsList.jsx'       // first_level
 //import F_L_Json from './first_level/F_L_Json.jsx'       // first_levelText_A
+
 
 
 import ObList from './second_level/ObList.jsx'        // second_level
@@ -78,7 +79,6 @@ class MainWindow extends React.Component {
                            </tr>
                         </tbody>
                      </table>
-
                      <ObList_WS obLists={Objest.obList} WS={ws} />
                      <br />
                      <ObList obLists={Objest.obList} RSS={Rss} />
