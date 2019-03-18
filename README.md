@@ -69,3 +69,11 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 
 ### 
 Добавляю коментарий руками. Делаю это чтобы посмотреть как это будет выглядеть... 14.03.19
+
+npx create-react-app my-app                //название проекта не должно содержать заглавные буквы.
+
+npm install react-websocket --save 
+
+                                           //Реагировать на привязку к элементу canvas через среду Konva
+npm install react-konva konva --save       //https://reactjsexample.com/react-binding-to-canvas-element-via-konva-framework/
+
