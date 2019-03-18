@@ -80,8 +80,13 @@ class Singl_Alarm extends React.Component {
       if (_te_Mess != null) {
          _te_Mess.value = _te_Mess.value + this.display();
       }
-*/
 
+
+let Fuel_Class = document.getElementById("Fuel_Class");
+if(Fuel_Class != null){
+   let r =0;
+}
+*/
       return (
          <Layer key={this.state.key}>
             <Field _W={60} _H={this._Height} obj_color='white' _X={this.state._X} _Y={this.state._Y} s_Width={0} />

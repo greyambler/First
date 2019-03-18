@@ -1,15 +1,15 @@
 import React from 'react';
 
 
-class TpList extends React.Component {
+class Fuels extends React.Component {
    constructor(props) {
       super(props);
 
-      this.state = { List: this.props.tpList };
+      this.state = { List: this.props.fuel };
    }
    componentDidUpdate(prevProps) {
 
-      this.setState({ 'List': prevProps.tpList })
+      this.setState({ 'List': prevProps.fuel })
    }
    Get_str() {
       let Mes = '';
@@ -37,4 +37,4 @@ class TpList extends React.Component {
    }
 };
 
-export default TpList;
+export default Fuels;
