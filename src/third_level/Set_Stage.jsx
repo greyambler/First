@@ -72,12 +72,16 @@ class Obj_Alarms extends React.Component {
 
             var Obj = JSON.parse(this.props.data);
 
+
+
             for (let index = 0; index < Obj.alarms.length; index++) {
+               const id = this.id;
                const element = Obj.alarms[index];
                let x = this.state._X;
                let y = this.state._Y;
 
                let r_Singl_Alarm = new Singl_Alarm(
+                  id,
                   element,
                   x,
                   y,
@@ -85,15 +89,16 @@ class Obj_Alarms extends React.Component {
                )
                Singl_Alarm_Mas[index] = r_Singl_Alarm.render();
             }
+
          } else {
             Singl_Alarm_Mas = null;
          }
          this.setState({ data: this.props.data });
       }
    }
-
    render() {
       if (Singl_Alarm_Mas != null) {
+
          const listItems = Singl_Alarm_Mas.map((number) =>
             // Правильно! Ключ должен быть указан внутри массива.
             number
@@ -101,6 +106,7 @@ class Obj_Alarms extends React.Component {
          return (
             listItems
          );
+
       }
       else {
          return null;
@@ -129,9 +135,9 @@ class Set_Stage extends Component {
             <Layer>
                <Field _W={_W} _H={_H} obj_color='white' _X={_X_s} _Y={_Y_s} s_Width={0} />
                <AZS_Image _W={_W_I} _H={_H} _X={_X_s + 1} _Y={_Y_1} />
+               <Text Text={this.props.name} x={_X_s + 20} y={_Y_s} />
             </Layer>
-            <Obj_Alarms _X={_X_1} _Y={_Y_1}
-               data={this.props.data}/>
+            <Obj_Alarms _X={_X_1} _Y={_Y_1} id={this.props.id} data={this.props.data} />
          </Stage>
       );
    }

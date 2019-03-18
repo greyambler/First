@@ -30,11 +30,12 @@ function get_Text(Int) {
 }
 
 class Singl_Alarm extends React.Component {
-   constructor(props, x, y, index) {
+   constructor(id, props, x, y, index) {
       super(props);
       this._Height = 20;
       if (index != null) {
          this.state = {
+            id: id,
             _X: x,
             _Y: y + (this._Height * index),
             N: index,
@@ -51,6 +52,7 @@ class Singl_Alarm extends React.Component {
       else {
          let r = 2;
          this.state = {
+            id: 0,
             _X: this.props._X,
             _Y: this.props._Y,
             N: r,
