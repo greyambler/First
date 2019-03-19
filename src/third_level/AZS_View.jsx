@@ -39,6 +39,7 @@ class AZS_View extends Component {
             IsOpen: false,
          };
       }
+      this.start_ws()
    }
 
    start_ws(e) {
@@ -123,7 +124,7 @@ class AZS_View extends Component {
          <table height={_H + 41} className="Def_table_FT">
             <tbody>
                <tr>
-                  <th height='12' colSpan='2'><h4>{this.state.id + ' ' + this.state.name_azs}</h4></th>
+                  <th height='12' colSpan='2'><h4>{this.state.name_azs}</h4></th>
                </tr>
                <tr>
                   {this.state.IsOpen
