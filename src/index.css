@@ -75,7 +75,6 @@ footer {
 }
 
 .Def_table_FT {
-   
    width: 100%;
    /*
    height: 50px;
@@ -113,13 +112,13 @@ th {
    width: 25%;
 }
 
-
-td{
-   vertical-align:top;
+td {
+   vertical-align: top;
    min-width: 35px;
    padding-left: 2px;
    /*border: 1px solid black;*/
 }
+
 /**/
 
 close_td {
@@ -145,7 +144,7 @@ close_td {
 .te_Mess {
    font-size: 14px;
    font-weight: 600;
-   height: 100px;
+   height: 90px;
    width: 100%;
 }
 
@@ -161,6 +160,25 @@ close_td {
 
 */
 
-.NumList, .AzsList, .Fuels{
+.NumList, .AzsList, .Fuels {
    padding-left: 24px;
+}
+
+ul.hr {
+   margin: 0;
+   /* Обнуляем значение отступов */
+   padding: 4px;
+   /* Значение полей */
+   display: inline;
+}
+
+ul.hr li{
+   display: inline-block ;
+   /* Отображать как строчный элемент */
+   margin-right: 15px;
+   /* Отступ слева */
+   /*border: 1px solid #000;*/
+   /* Рамка вокруг текста */
+   padding: 3px;
+   /* Поля вокруг текста */
 }

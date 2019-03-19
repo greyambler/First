@@ -30,13 +30,14 @@ function get_Text(Int) {
 }
 
 class Singl_Alarm extends React.Component {
-   constructor(props, x, y, index) {
+   constructor(props, x, y, w, index) {
       super(props);
       this._Height = 20;
       if (index != null) {
          this.state = {
             _X: x,
             _Y: y + (this._Height * index),
+            _W: w,
             N: index,
             tp: this.props.tp,
             tp_Text: index + '-' + get_Text(this.props.tp),
@@ -53,6 +54,7 @@ class Singl_Alarm extends React.Component {
          this.state = {
             _X: this.props._X,
             _Y: this.props._Y,
+            _W: w,
             N: r,
             tp: r,
             tp_Text: r + '-' + get_Text(2),
@@ -74,33 +76,25 @@ class Singl_Alarm extends React.Component {
       return STR;
    }
    render() {
-      /* 
-      let _te_Mess = document.getElementById("te_Mess");
 
-      if (_te_Mess != null) {
-         _te_Mess.value = _te_Mess.value + this.display();
-      }
-
-
-let Fuel_Class = document.getElementById("Fuel_Class");
-if(Fuel_Class != null){
-   let r =0;
-}
-*/
       return (
          <Layer key={this.state.key}>
-            <Field _W={60} _H={this._Height} obj_color='white' _X={this.state._X} _Y={this.state._Y} s_Width={0} />
+            <Field _W={this.state._W - 75} _H={this._Height} obj_color='white' _X={this.state._X} _Y={this.state._Y} s_Width={0} />
             <Text Text={this.state.tp_Text} x={this.state._X + 2} y={this.state._Y + 4} />
 
-            <Field _W={30} _H={this._Height}
-               obj_color={this.state.obj_color_val}
-               _X={this.state._X + 51} _Y={this.state._Y} s_Width={0} />
-            <Text Text={this.state.var} x={this.state._X + 62} y={this.state._Y + 4} />
+            <Field _W={30} _H={this._Height} obj_color={this.state.obj_color_val} s_Width={0}
+               _X={this.state._X + this.state._W - 71}
+               _Y={this.state._Y} />
+            <Text Text={this.state.var}
+               x={this.state._X + this.state._W - 60}
+               y={this.state._Y + 4} />
 
-            <Field _W={30} _H={this._Height}
-               obj_color={this.state.obj_color_rep}
-               _X={this.state._X + 82} _Y={this.state._Y} s_Width={0} />
-            <Text Text={this.state.rep} x={this.state._X + 93} y={this.state._Y + 4} />
+            <Field _W={30} _H={this._Height} obj_color={this.state.obj_color_rep} s_Width={0}
+               _X={this.state._X + this.state._W - 40}
+               _Y={this.state._Y} />
+            <Text Text={this.state.rep}
+               x={this.state._X + this.state._W - 30}
+               y={this.state._Y + 4} />
          </Layer>
       );
    }
@@ -109,3 +103,17 @@ if(Fuel_Class != null){
 
 
 export default Singl_Alarm;
+
+/*
+let _te_Mess = document.getElementById("te_Mess");
+
+if (_te_Mess != null) {
+   _te_Mess.value = _te_Mess.value + this.display();
+}
+
+
+let Fuel_Class = document.getElementById("Fuel_Class");
+if(Fuel_Class != null){
+let r =0;
+}
+*/

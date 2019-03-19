@@ -12,6 +12,7 @@ import AzsList from './first_level/AzsList.jsx'       // first_level
 
 import ObList from './second_level/ObList.jsx'        // second_level
 import ObList_WS from './third_level/ObList_WS.jsx'   // third_level
+import List_AZS_View from './third_level/List_AZS_View.jsx'
 
 
 var Ob_List_Class;
@@ -43,7 +44,7 @@ class MainWindow extends React.Component {
       //const R_Ob_List_Class = Ob_List_Class.render();
       Fuels_Class = new Fuels(Objest);
       Tp_List_Class = new TpList(Objest);
-      
+
       Mes = Ob_List_Class.Get_str();
       Mes = Mes + "\n" + Fuels_Class.Get_str();
       Mes = Mes + "\n" + Tp_List_Class.Get_str();
@@ -76,11 +77,25 @@ class MainWindow extends React.Component {
                                  <Text_A Message={Mes} />
                               </td>
                            </tr>
+                           <tr>
+                              <td>
+                                 <N_List ListVal={Objest.obList} id="Ob_List_Class" />
+                              </td>
+                              <td>
+                                 <N_List ListVal={Objest.fuel} id="Fuel_Class" />
+                              </td>
+                              <td>
+                                 <N_List ListVal={Objest.tpList} id="Tp_List_Class" />
+                              </td>
+                              <td>
+                                 <Text_A Message={Mes} />
+                              </td>
+                           </tr>
                         </tbody>
                      </table>
-
-                     <ObList_WS obLists={Objest.obList} WS={ws} />
+                     <List_AZS_View id="List_AZS_View" List={Objest.obList} WS={ws} />
                      <br />
+                     
                      <ObList obLists={Objest.obList} RSS={Rss} />
                      <br />
                   </div>
@@ -108,4 +123,9 @@ export default MainWindow;
 <td>
  <Text_A Message={Mes} />
 </td>
+
+
+<ObList_WS obLists={Objest.obList} WS={ws} />
+                     <br />
+
 */

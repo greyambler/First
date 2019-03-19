@@ -8,38 +8,12 @@ import Singl_Alarm from './Singl_Alarm.jsx'
 import Field from './Field.jsx'
 import get_Date from '../core/get_Date.jsx'
 
+import AZS_Image from './AZS_Image.jsx'
+
+
+
 let InDex = 0;
 
-class AZS_Image extends React.Component {
-   constructor(props) {
-      super(props);
-      this.state = {
-         _W: this.props._W,
-         _H: this.props._H,
-         _X: this.props._X,
-         _Y: this.props._Y,
-
-      };
-   }
-   componentDidMount() {
-      const image = new window.Image();
-      image.src = '/images/azk3.jpg';
-      image.onload = () => {
-         this.setState({
-            image: image
-         });
-      };
-   }
-   render() {
-      return <Image image={this.state.image}
-         width={this.state._W}
-         height={this.state._H}
-         x={this.state._X}
-         y={this.state._Y}
-         draggable
-      />;
-   }
-}
 
 var Singl_Alarm_Mas;
 
@@ -51,6 +25,7 @@ class Obj_Alarms extends React.Component {
       this.state = {
          _X: this.props._X,
          _Y: this.props._Y,
+         _W: this.props._W,
          data: this.props.data,
       };
    }
@@ -76,11 +51,12 @@ class Obj_Alarms extends React.Component {
                const element = Obj.alarms[index];
                let x = this.state._X;
                let y = this.state._Y;
-
+               let w = this.state._W;
                let r_Singl_Alarm = new Singl_Alarm(
                   element,
                   x,
                   y,
+                  w,
                   index,
                )
                Singl_Alarm_Mas[index] = r_Singl_Alarm.render();
@@ -130,7 +106,7 @@ class Set_Stage extends Component {
                <Field _W={_W} _H={_H} obj_color='white' _X={_X_s} _Y={_Y_s} s_Width={0} />
                <AZS_Image _W={_W_I} _H={_H} _X={_X_s + 1} _Y={_Y_1} />
             </Layer>
-            <Obj_Alarms _X={_X_1} _Y={_Y_1}
+            <Obj_Alarms _X={_X_1} _Y={_Y_1} _W={_W - _W_I}
                data={this.props.data}/>
          </Stage>
       );

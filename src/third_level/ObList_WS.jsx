@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
+import List_AZS_View from './List_AZS_View.jsx'
+
+
 import { Stage, Layer, Rect, Text, Circle, Shape, Image } from 'react-konva';
 import Konva from 'konva';
 
@@ -103,7 +106,7 @@ class ObList_WS extends React.Component {
 
       return (
          <div>
-            <table className="Def_table" key="AZSz">
+         <table className="Def_table">
                <caption className="tb_dvcscaption"><h4>Третий уровень запроса</h4></caption>
                <tbody>
                   <tr>
@@ -127,6 +130,10 @@ class ObList_WS extends React.Component {
                   </tr>
                </tbody>
             </table>
+            <br />
+            <hr />
+
+            
          </div>
       );
    }
@@ -134,3 +141,50 @@ class ObList_WS extends React.Component {
 
 
 export default ObList_WS;
+
+
+/*
+            <table className="Def_table">
+               <caption className="tb_dvcscaption"><h4>Третий уровень запроса</h4></caption>
+               <tbody>
+                  <tr>
+                     <th key="th_ObList" colSpan={Numb_T}>Объекты (ObList) WS </th>
+                  </tr>
+                  {MS == null ?
+                     <TR_Azs List={List} on_Click={this.start_ws} />
+                     :
+                     <TR_Stop List={List} on_Click={this.stop_ws} />
+                  }
+                  <tr colSpan={Numb}>
+                     <td colSpan={Numb}>
+                        <textarea id="te_Mess" ref="te_Mess" className="te_Mess" defaultValue={this.state.messages} />
+                     </td>
+                     <td colSpan={Numb} valign="top">
+                        <Set_Stage id="set_Stage"
+                           obList_WS={this}
+                           data={this.state.data}
+                        />
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+
+<br />
+            <table className="Def_table">
+               <caption className="tb_dvcscaption"><h4>Третий уровень запроса (2)</h4></caption>
+               <tbody>
+                  <tr>
+                     <th key="th_ObList">Список объектов (ObList) WS (2)</th>
+                  </tr>
+                  <tr>
+                     <td>
+                        <List_AZS_View id="List_AZS_View"
+                           List={this.props.obLists}
+                           WS={this.props.WS}
+                        />
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+            <br />
+*/
