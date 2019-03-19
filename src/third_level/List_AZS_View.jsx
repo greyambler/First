@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import AZS_View from './AZS_View.jsx'
-import Text_A from '../core/Text_A.jsx'
+
+//import Text_A from '../core/Text_A.jsx'
 
 class List_AZS_View extends Component {
    render() {

@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-
 import Singl_Alarm from './Singl_Alarm.jsx'
 
-var Singl_Alarm_Mas;
 
 class Alarm_Line extends React.Component {
    constructor(props) {
@@ -13,14 +11,15 @@ class Alarm_Line extends React.Component {
          _X: this.props._X,
          _Y: this.props._Y,
 
-         _W:this.props._W,
+         _W: this.props._W,
          data: this.props.data,
+         S_Alarm_Mas: null,
       };
    }
    componentDidUpdate(prevProps) {
+      let Singl_Alarm_Mas = new Array();
       if (this.props.data !== prevProps.data) {
          if (this.props.data != null) {
-            Singl_Alarm_Mas = new Array();
             var Obj = JSON.parse(this.props.data);
             for (let index = 0; index < Obj.alarms.length; index++) {
                const element = Obj.alarms[index];
@@ -36,26 +35,19 @@ class Alarm_Line extends React.Component {
                )
                Singl_Alarm_Mas[index] = r_Singl_Alarm.render();
             }
+            this.setState({ S_Alarm_Mas: Singl_Alarm_Mas });
          } else {
-            Singl_Alarm_Mas = null;
+            this.setState({ S_Alarm_Mas: null });
          }
          this.setState({ data: this.props.data });
       }
    }
-
    render() {
-      if (Singl_Alarm_Mas != null) {
-         const listItems = Singl_Alarm_Mas.map((number) =>
-            number
-         );
-         return (
-            listItems
-         );
+      if (this.state.S_Alarm_Mas != null) {
+         const listItems = this.state.S_Alarm_Mas.map((number) => number);
+         return (listItems);
       }
-      else {
-         return null;
-
-      }
+      else { return null; }
    }
 }
 

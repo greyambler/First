@@ -1,30 +1,23 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+//import ReactDOM from 'react-dom';
 
 
 import AZS_Image from './AZS_Image.jsx'
 import Alarm_Line from './Alarm_Line.jsx'
 import makeCounter from '../core/makeCounter.jsx'
 
-//import { Stage, Layer, Rect, Text, Circle, Shape, Image } from 'react-konva';
-
 import { Stage, Layer } from 'react-konva';
-import Konva from 'konva';
+//import { Stage, Layer, Rect, Text, Circle, Shape, Image } from 'react-konva';
+//import Konva from 'konva';
+//import Text_A from '../core/Text_A.jsx'
+//import Singl_Alarm from './Singl_Alarm.jsx'
 
-import Text_A from '../core/Text_A.jsx'
-
-import Singl_Alarm from './Singl_Alarm.jsx'
 import Field from './Field.jsx'
 import get_Date from '../core/get_Date.jsx'
 import get_Json_String from '../core/get_Json_String.jsx'
 
-
-//let connection;
 let Ws;
 var counter = makeCounter();
-
-//let N_Test = 1;
-
 
 class AZS_View extends Component {
    constructor(props) {
@@ -41,7 +34,7 @@ class AZS_View extends Component {
             name_azs: this.props.azs.nm,
             connection: null,
             N_Test: 1,
-            data: 1,
+            data: null,
             messages: [],
             IsOpen: false,
          };
@@ -49,9 +42,7 @@ class AZS_View extends Component {
    }
 
    start_ws(e) {
-      // alert('start_ws\n'+this.state.id)
       if ((this.state.id != null && this.state.connection == null) || this.state.connection.readyState != 1) {
-
 
          this.state.connection = new WebSocket(Ws);
          this.state.connection.onopen = evt => { this.OnOpen(evt.data) }//{ this.add_messages(evt.data) }
@@ -61,6 +52,7 @@ class AZS_View extends Component {
          this.state.connection.onmessage = evt => {
 
             if (evt.data != null) {
+
                //this.setState({ data: evt.data })// Рабочий
                //this.add_messages("\n" + evt.data);
 
@@ -78,7 +70,8 @@ class AZS_View extends Component {
                   '{"tp":6,"stat":[' + r3 + ',' + r2 + ']},' +
                   '{"tp":3,"stat":[' + r1 + ',' + r3 + ']}]}';
 
-               this.setState({ data: Test_Val });
+
+               this.setState({ data: Test_Val })
                this.add_messages("\n" + this.state.data);
                /**Test*******************************************/
 
@@ -87,7 +80,6 @@ class AZS_View extends Component {
       }
    }
    OnOpen(e) {
-      // alert('OnOpen\n'+this.state.id)
       if (this.state.id != null && this.state.connection.OPEN) {
          let MS = get_Json_String(this.state.id);
          this.state.connection.send(MS);
@@ -97,8 +89,6 @@ class AZS_View extends Component {
       }
    }
    stop_ws(e) {
-      // alert('stop_ws\n'+this.state.id)
-
       if (this.state.connection.readyState == 1) {
          this.state.connection.close(1000, "Hello Web Sockets!");
          this.add_messages("\n\tstop_ws(e)");
@@ -107,16 +97,15 @@ class AZS_View extends Component {
 
    }
    add_messages(e) {
-      // alert('add_messages\n'+this.state.id)
       if (e != null) {
          this.setState({
             messages: this.state.messages.concat("\n[ №" +
                counter() + ";  " + get_Date() + " ]\n " + e + "\n")
          });
-
-         // alert(this.state.messages);
       }
    }
+
+
 
    render() {
       let _W = 260;
@@ -149,7 +138,9 @@ class AZS_View extends Component {
                            <Field _W={_W} _H={_H} obj_color='white' _X={_X_s} _Y={_Y_s} s_Width={0} />
                            <AZS_Image _W={_W_Image} _H={_H_Image} _X={_X_s + 1} _Y={_Y_1} />
                         </Layer>
-                        <Alarm_Line _X={_X_1 + 2} _Y={_Y_1 + 2} _W={_W - _W_Image} data={this.state.data} />
+                        <Alarm_Line _X={_X_1 + 2} _Y={_Y_1 + 2} _W={_W - _W_Image}
+                           data={this.state.data}
+                        />
                      </Stage>
                   </td>
                   <td>
