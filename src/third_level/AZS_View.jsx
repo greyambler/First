@@ -92,8 +92,9 @@ class AZS_View extends Component {
    stop_ws(e) {
       if (this.state.connection.readyState == 1) {
          this.state.connection.close(1000, "Hello Web Sockets!");
-         this.add_messages("\n\tstop_ws(e)");
          this.setState({ data: null, IsOpen: false });
+         this.add_messages("\n\tstop_ws(e)");
+         
       }
 
    }
