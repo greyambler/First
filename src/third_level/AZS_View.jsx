@@ -81,7 +81,7 @@ class AZS_View extends Component {
       }
    }
    OnOpen(e) {
-      if (this.state.id != null && this.state.connection.OPEN) {
+      if (this.state.id != null && !this.state.IsOpen) {//this.state.connection.OPEN) {
          let MS = get_Json_String(this.state.id);
          this.state.connection.send(MS);
          counter.set(1);
@@ -90,11 +90,11 @@ class AZS_View extends Component {
       }
    }
    stop_ws(e) {
-      if (this.state.connection.readyState == 1) {
+      if (this.state.IsOpen) {//(this.state.connection.readyState == 1) {
          this.state.connection.close(1000, "Hello Web Sockets!");
          this.setState({ data: null, IsOpen: false });
          this.add_messages("\n\tstop_ws(e)");
-         
+
       }
 
    }
@@ -110,7 +110,7 @@ class AZS_View extends Component {
 
 
    render() {
-      let _W = 260;
+      let _W = 240;
       let _H = 90;
 
       let _W_Image = 90;

@@ -63,20 +63,7 @@ class MainWindow extends React.Component {
                               <th>Оборудование (TpList)</th>
                               <th>Ответ с сервера</th>
                            </tr>
-                           <tr>
-                              <td>
-                                 {Ob_List_Class.render()}
-                              </td>
-                              <td>
-                                 {Fuels_Class.render()}
-                              </td>
-                              <td>
-                                 {Tp_List_Class.render()}
-                              </td>
-                              <td>
-                                 <Text_A Message={Mes} />
-                              </td>
-                           </tr>
+
                            <tr>
                               <td>
                                  <N_List ListVal={Objest.obList} id="Ob_List_Class" />
@@ -93,9 +80,13 @@ class MainWindow extends React.Component {
                            </tr>
                         </tbody>
                      </table>
+                     <br />
+                     <center><h3>Cигнализация</h3></center>
+                     <hr />
                      <List_AZS_View id="List_AZS_View" List={Objest.obList} WS={ws} />
                      <br />
-                     
+                     <center><h3>Оборудованиена объекте</h3></center>
+                     <hr />
                      <ObList obLists={Objest.obList} RSS={Rss} />
                      <br />
                   </div>
@@ -111,21 +102,37 @@ class MainWindow extends React.Component {
 export default MainWindow;
 /*
 
-<td>
- <N_List ListVal={Objest.obList} id="Ob_List_Class" />
-</td>
-<td>
- <N_List ListVal={Objest.fuel} id="Fuel_Class" />
-</td>
-<td>
-   <N_List ListVal={Objest.tpList} id="Tp_List_Class" />
-</td>
-<td>
- <Text_A Message={Mes} />
-</td>
+<tr>
+   <td>
+      {Ob_List_Class.render()}
+   </td>
+   <td>
+      {Fuels_Class.render()}
+   </td>
+   <td>
+      {Tp_List_Class.render()}
+   </td>
+   <td>
+      <Text_A Message={Mes} />
+   </td>
+</tr>
 
 
-<ObList_WS obLists={Objest.obList} WS={ws} />
-                     <br />
+   <td>
+      <N_List ListVal={Objest.obList} id="Ob_List_Class" />
+   </td>
+   <td>
+      <N_List ListVal={Objest.fuel} id="Fuel_Class" />
+   </td>
+   <td>
+      <N_List ListVal={Objest.tpList} id="Tp_List_Class" />
+   </td>
+   <td>
+      <Text_A Message={Mes} />
+   </td>
+
+
+   <ObList_WS obLists={Objest.obList} WS={ws} />
+   <br />
 
 */
