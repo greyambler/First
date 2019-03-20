@@ -110,11 +110,11 @@ class AZS_View extends Component {
 
 
    render() {
-      let _W = 240;
+      let _W = 200;
       let _H = 90;
 
-      let _W_Image = 90;
-      let _H_Image = 90;
+      let _W_Image = 60;
+      let _H_Image = 70;
 
       let _X_s = 2;
       let _Y_s = 2;
