@@ -4,15 +4,17 @@ import React, { Component } from 'react';
 
 import AZS_Image from './AZS_Image.jsx'
 import Alarm_Line from './Alarm_Line.jsx'
+import Field from './Field.jsx'
 import makeCounter from '../core/makeCounter.jsx'
 
 import { Stage, Layer } from 'react-konva';
+
 //import { Stage, Layer, Rect, Text, Circle, Shape, Image } from 'react-konva';
 //import Konva from 'konva';
 //import Text_A from '../core/Text_A.jsx'
 //import Singl_Alarm from './Singl_Alarm.jsx'
 
-import Field from './Field.jsx'
+
 import get_Date from '../core/get_Date.jsx'
 import get_Json_String from '../core/get_Json_String.jsx'
 
@@ -23,6 +25,8 @@ class AZS_View extends Component {
    constructor(props) {
       super(props);
       Ws = this.props.WS;
+
+      let r = this.props.get_Id_AZS;
 
       this.start_ws = this.start_ws.bind(this);
       this.stop_ws = this.stop_ws.bind(this);
@@ -41,7 +45,6 @@ class AZS_View extends Component {
       }
       this.start_ws()
    }
-
    start_ws(e) {
       if ((this.state.id != null && this.state.connection == null) || this.state.connection.readyState != 1) {
 
@@ -106,9 +109,6 @@ class AZS_View extends Component {
          });
       }
    }
-
-
-
    render() {
       let _W = 200;
       let _H = 90;
@@ -150,6 +150,11 @@ class AZS_View extends Component {
                         defaultValue={this.state.messages} />
                   </td>
                </tr>
+               <tr>
+                  <td colSpan='2'>
+                     <button className="Def_button" name={this.state.name_azs} id={this.state.id }  onClick={this.props.on_Click} >Показать оборудование АЗС</button>
+                  </td>
+               </tr>
             </tbody>
          </table>
       );
@@ -159,12 +164,8 @@ class AZS_View extends Component {
 export default AZS_View;
 
 /*
-<Stage className="t_Stage" width={_W} height={_H} x={_X_s} y={_Y_s} >
-                        <Layer>
-                           <Field _W={_W} _H={_H} obj_color='white' _X={_X_s} _Y={_Y_s} s_Width={0} />
-                           <AZS_Image _W={_W_I} _H={_H} _X={_X_s + 1} _Y={_Y_1} />
-                        </Layer>
-                        <Alarm_Line _X={_X_1} _Y={_Y_1} data={this.state.data} />
-                     </Stage>
-
+<td>
+   <textarea id="te_Mess" ref="te_Mess" className="te_Mess"
+      defaultValue={this.state.messages} />
+</td>
 */

@@ -24,13 +24,16 @@ class AZS_Image extends React.Component {
    }
 
    render() {
-      return <Image image={this.state.image}
-         width={this.state._W}
-         height={this.state._H}
-         x={this.state._X}
-         y={this.state._Y}
-         draggable
-      />;
+      return (
+         <Image
+            image={this.state.image}
+            width={this.state._W}
+            height={this.state._H}
+            x={this.state._X}
+            y={this.state._Y}
+            draggable
+         />
+      );
    }
 }
 

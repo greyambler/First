@@ -147,6 +147,12 @@ close_td {
    height: 90px;
    width: 100%;
 }
+.te_Mess_1 {
+   font-size: 14px;
+   font-weight: 600;
+   height: 190px;
+   width: 200px;
+}
 
 /********************Графика***************************/
 
@@ -181,4 +187,10 @@ ul.hr li{
    /* Рамка вокруг текста */
    padding: 3px;
    /* Поля вокруг текста */
+}
+/******************************/
+
+.btn_Image{
+   background: white;
+   width: 320px;
 }

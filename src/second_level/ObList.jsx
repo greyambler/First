@@ -118,7 +118,6 @@ function Equip_s(e) {
    );
 }
 
-
 class ObList extends React.Component {
    constructor(props) {
       super(props);
@@ -216,6 +215,5 @@ class ObList extends React.Component {
       }
    }
 }
-
 
 export default ObList;

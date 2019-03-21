@@ -8,7 +8,7 @@ class OL_Directory extends React.Component {
    }
 
    componentDidUpdate(prevProps) {
-      this.setState({ 'List': prevProps.ListVal })
+      //this.setState({ 'List': prevProps.ListVal });
    }
 
    Get_str() {
