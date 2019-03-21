@@ -1,16 +1,10 @@
-
 import React from 'react';
-import { Stage, Layer } from 'react-konva';
 
-
-import OL_Directory from './core/OL_Directory.jsx'          // first_level
-import Text_A from './core/Text_A.jsx'                      // first_level
-
-import ObList from './second_level/ObList.jsx'              // second_level
-//import List_AZS from './second_level/List_AZS.jsx'          // second_level
+import OL_Directory from './core/OL_Directory.jsx'                  // first_level
+import Text_A from './core/Text_A.jsx'                              // first_level
+import ObList from './second_level/ObList.jsx'                      // second_level
 
 import List_AZS_View from './third_level/List_AZS_View.jsx'
-
 import List_Device_View from './fourth_level/List_Device_View.jsx'  // fourth_level
 
 const _Debuge = false;
@@ -78,10 +72,7 @@ class MainWindow extends React.Component {
       this.get_Id_AZS = this.get_Id_AZS.bind(this);
 
       this.state = {
-         //ObjList: this.props.obLists, 
-         //nameObj: null,
          dvcs: null,
-         //dvcOnasz: null, 
          nameAZS: null,
          test_mess: '',
       };
@@ -157,16 +148,16 @@ class MainWindow extends React.Component {
                      </table>
                      <center><h3>Cигнализация</h3></center>
                      <hr />
-
                      <List_AZS_View id="List_AZS_View" on_Click={this.get_Id_AZS}
                         List={Objest.obList} WS={ws} address={this.state.test_mess} />
-                     <center><h3>Оборудованиена объекте</h3></center>
+                     <center><h3>Оборудование на объекте</h3></center>
                      <hr />
                      {this.state.dvcs != null &&
-                        <List_Device_View List={this.state.dvcs} name={this.state.nameAZS} />
+                        <List_Device_View id="List_Device_View" List={this.state.dvcs}
+                           name={this.state.nameAZS} />
                      }
                      <br />
-                     <center><h3>Оборудованиена объекте 1</h3></center>
+                     <center><h3>Оборудование на объекте Old</h3></center>
                      <hr />
                      <ObList obLists={Objest.obList} RSS={Rss} />
                      <br />

@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 //import ReactDOM from 'react-dom';
 
 
-import AZS_Image from './AZS_Image.jsx'
+import AZS_Image from '../core/AZS_Image.jsx'
 import Alarm_Line from './Alarm_Line.jsx'
-import Field from './Field.jsx'
+import Field from '../core/Field.jsx'
 import makeCounter from '../core/makeCounter.jsx'
 
 import { Stage, Layer } from 'react-konva';
@@ -138,7 +138,7 @@ class AZS_View extends Component {
                      <Stage className="t_Stage" width={_W} height={_H} x={_X_s} y={_Y_s} >
                         <Layer>
                            <Field _W={_W} _H={_H} obj_color='white' _X={_X_s} _Y={_Y_s} s_Width={0} />
-                           <AZS_Image _W={_W_Image} _H={_H_Image} _X={_X_s + 1} _Y={_Y_1} />
+                           <AZS_Image Image='/images/azk3.jpg' _W={_W_Image} _H={_H_Image} _X={_X_s + 1} _Y={_Y_1} />
                         </Layer>
                         <Alarm_Line _X={_X_1 + 2} _Y={_Y_1 + 2} _W={_W - _W_Image}
                            data={this.state.data}

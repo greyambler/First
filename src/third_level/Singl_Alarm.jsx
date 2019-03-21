@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import { Stage, Layer, Rect, Text, Circle, Shape, Image } from 'react-konva';
 import Konva from 'konva';
 import get_Date from '../core/get_Date.jsx'
-import Field from './Field.jsx'
+import Field from '../core/Field.jsx'
 
 
 function get_Color(Int) {

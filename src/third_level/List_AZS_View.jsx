@@ -3,7 +3,7 @@ import AZS_View from './AZS_View.jsx'
 import Text_A from '../core/Text_A.jsx'
 
 
-const _Debuge = true;
+const _Debuge = false;
 
 class List_AZS_View extends Component {
    render() {
