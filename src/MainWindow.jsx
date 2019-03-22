@@ -2,13 +2,13 @@ import React from 'react';
 
 import OL_Directory from './core/OL_Directory.jsx'                  // first_level
 import Text_A from './core/Text_A.jsx'                              // first_level
-import ObList from './second_level/ObList.jsx'                      // second_level
+//import ObList from './second_level/ObList.jsx'                      // second_level
 
 import List_AZS_View from './third_level/List_AZS_View.jsx'
 import List_Device_View from './fourth_level/List_Device_View.jsx'  // fourth_level
 
 const _Debuge = false;
-
+/*
 function Dvc_s(e) {
    const List = e.List;
    const TowColl = e.TowColl == "true";
@@ -64,7 +64,7 @@ function Dvc_s(e) {
       </div>
    );
 }
-
+*/
 
 class MainWindow extends React.Component {
    constructor(props) {
@@ -127,7 +127,6 @@ class MainWindow extends React.Component {
                                  <th>Ответ с сервера</th>
                               }
                            </tr>
-
                            <tr>
                               <td>
                                  <OL_Directory ListVal={Objest.obList} type={'ObList'} id="Ob_List_Class" />
@@ -154,8 +153,8 @@ class MainWindow extends React.Component {
                      <hr />
                      {this.state.dvcs != null &&
                         <List_Device_View id="List_Device_View" List={this.state.dvcs}
-                        ListFuels={Objest.fuel}
-                           name={this.state.nameAZS} RSS={this.props.Rss}/>
+                           ListFuels={Objest.fuel}
+                           name={this.state.nameAZS} RSS={this.props.Rss} />
                      }
                   </div>
                ) : (
