@@ -154,13 +154,9 @@ class MainWindow extends React.Component {
                      <hr />
                      {this.state.dvcs != null &&
                         <List_Device_View id="List_Device_View" List={this.state.dvcs}
-                           name={this.state.nameAZS} />
+                        ListFuels={Objest.fuel}
+                           name={this.state.nameAZS} RSS={this.props.Rss}/>
                      }
-                     <br />
-                     <center><h3>Оборудование на объекте Old</h3></center>
-                     <hr />
-                     <ObList obLists={Objest.obList} RSS={Rss} />
-                     <br />
                   </div>
                ) : (
                   <h1>NULL</h1>
@@ -172,3 +168,14 @@ class MainWindow extends React.Component {
 }
 
 export default MainWindow;
+
+/*
+
+                     <br />
+                     <center><h3>Оборудование на объекте Old</h3></center>
+                     <hr />
+                     <ObList obLists={Objest.obList} RSS={Rss} />
+                     <br />
+
+
+*/

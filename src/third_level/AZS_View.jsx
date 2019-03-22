@@ -18,14 +18,13 @@ import { Stage, Layer } from 'react-konva';
 import get_Date from '../core/get_Date.jsx'
 import get_Json_String from '../core/get_Json_String.jsx'
 
-let Ws;
+
 var counter = makeCounter();
+const _Debuge = false;
 
 class AZS_View extends Component {
    constructor(props) {
       super(props);
-      Ws = this.props.WS;
-
       let r = this.props.get_Id_AZS;
 
       this.start_ws = this.start_ws.bind(this);
@@ -34,6 +33,7 @@ class AZS_View extends Component {
 
       if (this.props.azs != null) {
          this.state = {
+            Ws:this.props.WS,
             id: this.props.azs.id,
             name_azs: this.props.azs.nm,
             connection: null,
@@ -43,12 +43,12 @@ class AZS_View extends Component {
             IsOpen: false,
          };
       }
-      this.start_ws()
+      this.start_ws();
    }
    start_ws(e) {
       if ((this.state.id != null && this.state.connection == null) || this.state.connection.readyState != 1) {
 
-         this.state.connection = new WebSocket(Ws);
+         this.state.connection = new WebSocket(this.state.Ws);
          this.state.connection.onopen = evt => { this.OnOpen(evt.data) }//{ this.add_messages(evt.data) }
          this.state.connection.onclose = evt => { this.add_messages(evt.data) }
          this.state.connection.onerror = evt => { this.add_messages(evt.data) }
@@ -145,10 +145,12 @@ class AZS_View extends Component {
                         />
                      </Stage>
                   </td>
+                  {_Debuge &&
                   <td>
                      <textarea id="te_Mess" ref="te_Mess" className="te_Mess"
                         defaultValue={this.state.messages} />
                   </td>
+                  }
                </tr>
                <tr>
                   <td colSpan='2'>

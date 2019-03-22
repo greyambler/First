@@ -6,26 +6,30 @@ import { Stage, Layer, Text } from 'react-konva';
 
 const _Debuge = false;
 
-//let Ws;
-var counter = makeCounter();
-
 class Device_View extends Component {
    constructor(props) {
       super(props);
-      //Ws = this.props.WS;
+
       let r = this.props.get_Id_AZS;
       if (this.props.azs != null) {
          this.state = {
+            RSS: this.props.RSS,
             id: this.props.azs.id,
             name_azs: this.props.azs.nm,
-            connection: null,
-            N_Test: 1,
-            data: null,
-            messages: [],
-            IsOpen: false,
+            messages: this.props.RSS,
+            FullNamePL: this.props.FullNamePL,
          };
       }
    }
+   componentDidUpdate(prevProps) {
+      if (this.props.FullNamePL !== prevProps.FullNamePL) {
+         this.setState({
+            messages: this.props.RSS,
+            FullNamePL: this.props.FullNamePL
+         });
+      }
+   }
+
    render() {
       let _W = 190;
       let _H = 90;
@@ -50,10 +54,18 @@ class Device_View extends Component {
                         <Layer>
                            <Field _W={_W} _H={_H} obj_color='white' _X={_X_s} _Y={_Y_s} s_Width={0} />
                            <AZS_Image Image={this.props.Image} _W={_W_Image} _H={_H_Image} _X={_X_s + 1} _Y={_Y_1} />
-                           <Text Text={this.props.azs.id} x={_X_1 + 2} y={_Y_1 + 2} />
+                           <Text Text={this.props.FullEQPMS} x={_X_1 + 2} y={_Y_1 + 2} />
                         </Layer>
                      </Stage>
                   </td>
+                  {_Debuge &&
+                     <td>
+                        <textarea id="te_Mess" ref="te_Mess" className="te_Mess"
+                           value={this.state.messages + this.state.FullNamePL}
+                           defaultValue={this.state.messages} />
+                     </td>
+                  }
+
                </tr>
             </tbody>
          </table>
@@ -62,16 +74,9 @@ class Device_View extends Component {
 }
 
 export default Device_View;
-
 /*
-<td>
-   <textarea id="te_Mess" ref="te_Mess" className="te_Mess"
-      defaultValue={this.state.messages} />
-</td>
 
+<Text Text={this.props.azs.id} x={_X_1 + 2} y={_Y_1 + 2} />
 
-
-   <Field _W={_W} _H={_H} obj_color='white' _X={_X_s} _Y={_Y_s} s_Width={0} />
-   <AZS_Image _W={_W_Image} _H={_H_Image} _X={_X_s + 1} _Y={_Y_1} />
 
 */
