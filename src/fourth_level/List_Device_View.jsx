@@ -20,7 +20,7 @@ class List_Device_View extends React.Component {
    }
    componentDidUpdate(prevProps) {
       if (this.props.List !== prevProps.List) {
-         this.setState({ List_Devce: this.props.List.dvc });
+         this.setState({ List_Devce: this.props.List.dvc ,name_azs: this.props.name});
       }
    }
    Get_Device(el) {

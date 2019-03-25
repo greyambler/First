@@ -57,11 +57,11 @@ class AZS_View extends Component {
 
             if (evt.data != null) {
 
-               //this.setState({ data: evt.data })// Рабочий
-               //this.add_messages("\n" + evt.data);
+               this.setState({ data: evt.data })// Рабочий
+               this.add_messages("\n" + evt.data);
 
 
-               /**Test*******************************************/
+               /**Test*******************************************
                let r1 = (((this.state.N_Test + 1) % 4) == 0) ? 1 : (this.state.N_Test + 1) % 4;
                let r2 = (((this.state.N_Test + 2) % 4) == 0) ? 1 : (this.state.N_Test + 2) % 4;
                let r3 = (((this.state.N_Test + 3) % 4) == 0) ? 1 : (this.state.N_Test + 3) % 4;
@@ -77,7 +77,7 @@ class AZS_View extends Component {
 
                this.setState({ data: Test_Val })
                this.add_messages("\n" + this.state.data);
-               /**Test*******************************************/
+               **Test*******************************************/
 
             }
          }
