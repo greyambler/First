@@ -77,11 +77,35 @@ footer {
 .Def_table_FT {
    width: 100%;
    /*
-   height: 50px;
-  
+   height: 50px;  
    */
-   border: 0.1px solid rgb(2, 155, 155);
-   ;
+   border: 0.1px solid rgb(2, 155, 155);  
+}
+.Def_table_FT_Choose {
+   width: 100%;
+   /*
+   height: 50px;  
+   */
+   border: 7.1px solid rgb(2, 155, 155);
+   background: rgb(218, 218, 218);
+    /*Скругленные углы*/
+    -webkit-border-radius: 19px;
+    -moz-border-radius: 19px;
+    border-radius: 19px;
+}
+.Def_table_FT_Not_Choose {
+   width: 30%;
+   height: 30%;  
+   
+   /*
+   height: 50px;  
+   */
+   /*border: 0.1px solid rgb(2, 155, 155);
+   background: rgb(218, 218, 218);*/
+    /*Скругленные углы
+    -webkit-border-radius: 19px;
+    -moz-border-radius: 19px;
+    border-radius: 19px;*/
 }
 
 .Def_table_Pol {
@@ -128,18 +152,70 @@ close_td {
    /* Граница вокруг ячеек */
 }
 
-.Def_button {
-   /*background-color: #008B8B; */
-   color: black;
+.Def_button_Choose {
    padding: 4px;
    text-align: center;
    text-decoration: none;
    display: inline-block;
-   font-size: 10px;
+   font-size: 12px;
    font-weight: 600;
    width: 100%;
    height: 27px;
 }
+.Def_button {
+   /*background-color: #008B8B; */
+   /*color: black;*/
+   padding: 4px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 12px;
+   font-weight: 600;
+   width: 100%;
+   height: 27px;
+
+
+   /*Скругленные углы*/
+   -webkit-border-radius: 9px;
+   -moz-border-radius: 9px;
+   border-radius: 9px;
+
+
+   
+   background: linear-gradient( rgb(4, 231, 231), rgb(1, 107, 107)) rgb(126, 255, 255);
+   transition: 0.2s;
+
+   /*Тень*
+
+   -webkit-box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.2);
+   -moz-box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.2);
+   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.2);
+   /*Переход*
+   -webkit-transition: All 0.8s ease;
+   -moz-transition: All 0.8s ease;
+   -o-transition: All 0.8s ease;
+   -ms-transition: All 0.8s ease;
+   transition: All 0.8s ease;
+
+   display: inline-block;
+   color: white;
+   text-decoration: none;
+   padding: .5em 2em;
+   outline: none;
+   border-width: 2px 0;
+   border-style: solid none;
+   border-color: rgb(51, 253, 219) #000 rgb(0, 94, 97);
+   border-radius: 6px;
+   background: linear-gradient( rgb(4, 231, 231), rgb(1, 107, 107)) rgb(21, 223, 223);
+   transition: 0.2s;
+   ****/
+}
+
+/*
+.Def_button:hover {
+     height: 34px;
+   }
+*/
 
 .te_Mess {
    font-size: 14px;
@@ -147,6 +223,7 @@ close_td {
    height: 90px;
    width: 100%;
 }
+
 .te_Mess_1 {
    font-size: 14px;
    font-weight: 600;
@@ -178,8 +255,8 @@ ul.hr {
    display: inline;
 }
 
-ul.hr li{
-   display: inline-block ;
+ul.hr li {
+   display: inline-block;
    /* Отображать как строчный элемент */
    margin-right: 15px;
    /* Отступ слева */
@@ -188,9 +265,10 @@ ul.hr li{
    padding: 3px;
    /* Поля вокруг текста */
 }
+
 /******************************/
 
-.btn_Image{
+.btn_Image {
    background: white;
    width: 320px;
 }

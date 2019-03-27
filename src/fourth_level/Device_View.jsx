@@ -61,11 +61,10 @@ class Device_View extends Component {
                   {_Debuge &&
                      <td>
                         <textarea id="te_Mess" ref="te_Mess" className="te_Mess"
-                           value={this.state.messages + this.state.FullNamePL}
+                           value={this.state.messages + " " +this.props.counters}
                            defaultValue={this.state.messages} />
                      </td>
                   }
-
                </tr>
             </tbody>
          </table>
@@ -75,6 +74,14 @@ class Device_View extends Component {
 
 export default Device_View;
 /*
+                  {_Debuge &&
+                     <td>
+                        <textarea id="te_Mess" ref="te_Mess" className="te_Mess"
+                           value={this.state.messages + this.state.FullNamePL}
+                           defaultValue={this.state.messages} />
+                     </td>
+                  }
+
 
 <Text Text={this.props.azs.id} x={_X_1 + 2} y={_Y_1 + 2} />
 

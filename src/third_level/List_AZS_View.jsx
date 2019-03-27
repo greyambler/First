@@ -6,9 +6,54 @@ import Text_A from '../core/Text_A.jsx'
 const _Debuge = false;
 
 class List_AZS_View extends Component {
+   constructor(props) {
+      super(props);
+      this.ON_Clisck = this.ON_Clisck.bind(this);
+      this.change_view_AZS_View = this.change_view_AZS_View.bind(this);
+   }
+   change_view_AZS_View(e) {
+      /*
+      if (e != null) {
+
+         const Id = e.currentTarget.id;
+         const name = e.currentTarget.name;
+         e.currentTarget.className = "Def_button_Choose";
+         
+      }
+      */
+   }
+   ON_Clisck(e) {
+      if (e != null) {
+         this.props.on_Click(e);
+
+         const Id = e.currentTarget.id;
+         const name = e.currentTarget.name;
+         for (const iterator of this.props.List) {
+
+            var elem = document.getElementById('tb' + iterator.id);
+            if(elem != null && Id == iterator.id){
+               elem.className= "Def_table_FT_Choose";
+            }else{
+               elem.className= "Def_table_FT_Not_Choose";
+            }
+         }
+
+        
+
+         /*
+         var elem = document.getElementById('tb' + this.props.id);
+         if (elem != null) {
+            let r = 0;
+            elem.className = "Def_table_FT_Choose";
+         }
+         */
+      }
+   }
+
+
    render() {
       let r = this.props.get_Id_AZS;
-      const address = this.props.address;
+      let address = this.props.address;
       if (address == null)
          address = "";
       return (
@@ -18,14 +63,14 @@ class List_AZS_View extends Component {
                   <li key={'li ' + el.id}>
                      <AZS_View azs={el} WS={this.props.WS}
                         key={'AZS_View ' + el.id}
-                        id={'AZS_View ' + el.id}
-                        on_Click={this.props.on_Click} />
+                        id={el.id}
+                        on_Click={this.ON_Clisck} />
                   </li>
                ))
             }
             {_Debuge &&
                <li>
-                  <textarea value={address} className="te_Mess_1" />
+                  <textarea value={address} className='te_Mess_1' />
                </li>
             }
 

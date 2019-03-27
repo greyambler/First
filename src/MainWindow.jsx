@@ -81,6 +81,7 @@ class MainWindow extends React.Component {
       if (e != null) {
          const Id = e.currentTarget.id;
          const name = e.currentTarget.name;
+
          var rss = this.props.Rss + Id;
 
          var myRequest = new Request(rss);
@@ -148,11 +149,13 @@ class MainWindow extends React.Component {
                      <center><h3>Cигнализация</h3></center>
                      <hr />
                      <List_AZS_View id="List_AZS_View" on_Click={this.get_Id_AZS}
+                        
                         List={Objest.obList} WS={ws} address={this.state.test_mess} />
                      <center><h3>Оборудование на объекте</h3></center>
                      <hr />
                      {this.state.dvcs != null &&
-                        <List_Device_View id="List_Device_View" List={this.state.dvcs}
+                        <List_Device_View id="List_Device_View"
+                           List={this.state.dvcs}
                            ListFuels={Objest.fuel}
                            name={this.state.nameAZS} RSS={this.props.Rss} />
                      }

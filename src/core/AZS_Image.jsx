@@ -30,10 +30,13 @@ class AZS_Image extends React.Component {
             height={this.state._H}
             x={this.state._X}
             y={this.state._Y}
-            draggable
+            
          />
       );
    }
 }
 
 export default AZS_Image;
+/*
+draggable
+*/

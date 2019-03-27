@@ -22,10 +22,13 @@ import get_Json_String from '../core/get_Json_String.jsx'
 var counter = makeCounter();
 const _Debuge = false;
 
+
+
 class AZS_View extends Component {
    constructor(props) {
       super(props);
       let r = this.props.get_Id_AZS;
+      this.ON_Clisck = this.ON_Clisck.bind(this);
 
       this.start_ws = this.start_ws.bind(this);
       this.stop_ws = this.stop_ws.bind(this);
@@ -33,7 +36,7 @@ class AZS_View extends Component {
 
       if (this.props.azs != null) {
          this.state = {
-            Ws:this.props.WS,
+            Ws: this.props.WS,
             id: this.props.azs.id,
             name_azs: this.props.azs.nm,
             connection: null,
@@ -41,10 +44,19 @@ class AZS_View extends Component {
             data: null,
             messages: [],
             IsOpen: false,
+            className: 'Def_table_FT',
          };
       }
       this.start_ws();
    }
+
+   ON_Clisck(e) {
+      if (e != null) {
+         this.props.on_Click(e);
+
+      }
+   }
+
    start_ws(e) {
       if ((this.state.id != null && this.state.connection == null) || this.state.connection.readyState != 1) {
 
@@ -57,11 +69,11 @@ class AZS_View extends Component {
 
             if (evt.data != null) {
 
-               this.setState({ data: evt.data })// Рабочий
-               this.add_messages("\n" + evt.data);
+               //this.setState({ data: evt.data })// Рабочий
+               //this.add_messages("\n" + evt.data);
 
 
-               /**Test*******************************************
+               /**Test*******************************************/
                let r1 = (((this.state.N_Test + 1) % 4) == 0) ? 1 : (this.state.N_Test + 1) % 4;
                let r2 = (((this.state.N_Test + 2) % 4) == 0) ? 1 : (this.state.N_Test + 2) % 4;
                let r3 = (((this.state.N_Test + 3) % 4) == 0) ? 1 : (this.state.N_Test + 3) % 4;
@@ -77,7 +89,7 @@ class AZS_View extends Component {
 
                this.setState({ data: Test_Val })
                this.add_messages("\n" + this.state.data);
-               **Test*******************************************/
+               /**Test*******************************************/
 
             }
          }
@@ -122,7 +134,7 @@ class AZS_View extends Component {
       let _Y_1 = _Y_s + 1;
 
       return (
-         <table height={_H + 41} className="Def_table_FT">
+         <table height={_H + 41} className={this.state.className} id={'tb' + this.props.id} name={this.state.name_azs}>
             <tbody>
                <tr>
                   <th height='12' colSpan='2'><h4>{this.state.name_azs}</h4></th>
@@ -146,15 +158,16 @@ class AZS_View extends Component {
                      </Stage>
                   </td>
                   {_Debuge &&
-                  <td>
-                     <textarea id="te_Mess" ref="te_Mess" className="te_Mess"
-                        defaultValue={this.state.messages} />
-                  </td>
+                     <td>
+                        <textarea id="te_Mess" ref="te_Mess" className="te_Mess"
+                           defaultValue={this.state.messages} />
+                     </td>
                   }
                </tr>
                <tr>
                   <td colSpan='2'>
-                     <button className="Def_button" name={this.state.name_azs} id={this.state.id }  onClick={this.props.on_Click} >Показать оборудование АЗС</button>
+                     <button className="Def_button" name={this.state.name_azs} id={this.state.id}
+                        onClick={this.ON_Clisck} >Показать оборудование АЗС</button>
                   </td>
                </tr>
             </tbody>
