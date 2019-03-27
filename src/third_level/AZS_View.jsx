@@ -44,11 +44,11 @@ class AZS_View extends Component {
             data: null,
             messages: [],
             IsOpen: false,
-            className: 'Def_table_FT',
          };
       }
       this.start_ws();
    }
+   
 
    ON_Clisck(e) {
       if (e != null) {
@@ -134,10 +134,10 @@ class AZS_View extends Component {
       let _Y_1 = _Y_s + 1;
 
       return (
-         <table height={_H + 41} className={this.state.className} id={'tb' + this.props.id} name={this.state.name_azs}>
+         <table height={_H + 41} className='Def_table_FT_Not_Choose' id={'tb' + this.props.id} name={this.state.name_azs}>
             <tbody>
                <tr>
-                  <th height='12' colSpan='2'><h4>{this.state.name_azs}</h4></th>
+                  <th className='th_AZS' height='12' colSpan='2'><h4>{this.state.name_azs}</h4></th>
                </tr>
                <tr>
                   {this.state.IsOpen

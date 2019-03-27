@@ -149,7 +149,7 @@ class MainWindow extends React.Component {
                      <center><h3>Cигнализация</h3></center>
                      <hr />
                      <List_AZS_View id="List_AZS_View" on_Click={this.get_Id_AZS}
-                        
+
                         List={Objest.obList} WS={ws} address={this.state.test_mess} />
                      <center><h3>Оборудование на объекте</h3></center>
                      <hr />

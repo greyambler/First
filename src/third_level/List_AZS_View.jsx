@@ -9,19 +9,8 @@ class List_AZS_View extends Component {
    constructor(props) {
       super(props);
       this.ON_Clisck = this.ON_Clisck.bind(this);
-      this.change_view_AZS_View = this.change_view_AZS_View.bind(this);
    }
-   change_view_AZS_View(e) {
-      /*
-      if (e != null) {
 
-         const Id = e.currentTarget.id;
-         const name = e.currentTarget.name;
-         e.currentTarget.className = "Def_button_Choose";
-         
-      }
-      */
-   }
    ON_Clisck(e) {
       if (e != null) {
          this.props.on_Click(e);
@@ -31,22 +20,12 @@ class List_AZS_View extends Component {
          for (const iterator of this.props.List) {
 
             var elem = document.getElementById('tb' + iterator.id);
-            if(elem != null && Id == iterator.id){
-               elem.className= "Def_table_FT_Choose";
-            }else{
-               elem.className= "Def_table_FT_Not_Choose";
+            if (elem != null && Id == iterator.id) {
+               elem.className = "Def_table_FT_Choose";
+            } else {
+               elem.className = "Def_table_FT_Not_Choose";
             }
          }
-
-        
-
-         /*
-         var elem = document.getElementById('tb' + this.props.id);
-         if (elem != null) {
-            let r = 0;
-            elem.className = "Def_table_FT_Choose";
-         }
-         */
       }
    }
 
