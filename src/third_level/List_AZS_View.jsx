@@ -47,12 +47,12 @@ class List_AZS_View extends Component {
                   </li>
                ))
             }
+
             {_Debuge &&
                <li>
                   <textarea value={address} className='te_Mess_1' />
                </li>
             }
-
          </ul>
       );
    }

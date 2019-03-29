@@ -16,23 +16,28 @@ class Device_View extends Component {
             RSS: this.props.RSS,
             id: this.props.azs.id,
             name_azs: this.props.azs.nm,
-            messages: this.props.RSS,
+            messages: this.props.messages,
             FullNamePL: this.props.FullNamePL,
+            HeadName: this.props.HeadName,
          };
       }
    }
    componentDidUpdate(prevProps) {
       if (this.props.FullNamePL !== prevProps.FullNamePL) {
          this.setState({
-            messages: this.props.RSS,
             FullNamePL: this.props.FullNamePL
+         });
+      }
+      if (this.props.messages !== prevProps.messages && this.props.messages != "") {
+         this.setState({
+            messages: this.props.messages
          });
       }
    }
 
    render() {
       let _W = 190;
-      let _H = 90;
+      let _H = 100;
 
       let _W_Image = 60;
       let _H_Image = 70;
@@ -53,15 +58,19 @@ class Device_View extends Component {
                      <Stage className="t_Stage" width={_W} height={_H} x={_X_s} y={_Y_s} >
                         <Layer>
                            <Field _W={_W} _H={_H} obj_color='white' _X={_X_s} _Y={_Y_s} s_Width={0} />
-                           <AZS_Image Image={this.props.Image} _W={_W_Image} _H={_H_Image} _X={_X_s + 1} _Y={_Y_1} />
-                           <Text Text={this.props.FullEQPMS} x={_X_1 + 2} y={_Y_1 + 2} />
+                           <Text fontSize={18}
+                              /*stroke='grey'*/
+                              fill='blue'
+                              Text={this.state.HeadName} x={_X_s + 7} y={_Y_1 - 5} />
+                           <AZS_Image Image={this.props.Image} _W={_W_Image} _H={_H_Image} _X={_X_s + 1} _Y={_Y_1 + 16} />
+                           <Text Text={this.props.FullEQPMS} x={_X_1 + 2} y={_Y_1 + 18} />
                         </Layer>
                      </Stage>
                   </td>
                   {_Debuge &&
                      <td>
-                        <textarea id="te_Mess" ref="te_Mess" className="te_Mess"
-                           value={this.state.messages + " " +this.props.counters}
+                        <textarea id="te_Mess_Lev" className="te_Mess_Lev"
+                           value={this.state.RSS + this.state.FullNamePL}
                            defaultValue={this.state.messages} />
                      </td>
                   }
@@ -74,6 +83,10 @@ class Device_View extends Component {
 
 export default Device_View;
 /*
+
+value={this.props.COUNETRS}
+
+
                   {_Debuge &&
                      <td>
                         <textarea id="te_Mess" ref="te_Mess" className="te_Mess"

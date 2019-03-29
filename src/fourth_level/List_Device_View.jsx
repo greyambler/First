@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import Device_PL from './Device_PL.jsx'
 import Device_PUMP from './Device_PUMP.jsx'
+import Device_PUMP_Guns from './Device_PUMP_Guns.jsx'
+
 import Device_TSO from './Device_TSO.jsx'
 
 const _Debuge = false;
@@ -10,23 +12,29 @@ class List_Device_View extends React.Component {
    constructor(props) {
       super(props);
       this.Get_Device = this.Get_Device.bind(this);
-      
+
       this.state = {
          id: this.props.List.id,
          List_Devce: this.props.List.dvc,
          name_azs: this.props.name,
          RSS: this.props.RSS,
+         WS: this.props.WS,
       };
    }
    componentDidUpdate(prevProps) {
       if (this.props.List !== prevProps.List) {
-         this.setState({ List_Devce: this.props.List.dvc ,name_azs: this.props.name});
+         this.setState({ List_Devce: this.props.List.dvc, name_azs: this.props.name });
       }
    }
    Get_Device(el) {
       switch (el.typ) {
-         case 'pl': return <Device_PL el={el} RSS={this.state.RSS} ListFuels={this.props.ListFuels}/>;
-         case 'pump': return <Device_PUMP el={el} RSS={this.state.RSS} ListFuels={this.props.ListFuels}/>;
+         case 'pl': return <Device_PL el={el} RSS={this.state.RSS} ListFuels={this.props.ListFuels} />;
+         //case 'pump': return <Device_PUMP el={el} RSS={this.state.RSS} WS={this.state.WS} ListFuels={this.props.ListFuels}/>;
+         case 'pump': return <Device_PUMP_Guns
+            el={el}
+            RSS={this.state.RSS}
+            WS={this.state.WS}
+            ListFuels={this.props.ListFuels} />;
          case 'tso': return <Device_TSO el={el} RSS={this.state.RSS} />;
          default: return null;
       }

@@ -6,7 +6,13 @@ import AZS_Image from '../core/AZS_Image.jsx'
 import Field from '../core/Field.jsx'
 
 
-const _Debuge = true;
+import makeCounter from '../core/makeCounter.jsx'
+import get_Date from '../core/get_Date.jsx'
+import get_Json_String from '../core/get_Json_String.jsx'
+
+var counter = makeCounter();
+
+const _Debuge = false;
 
 class Device_PUMP extends Component {
    constructor(props) {
@@ -14,14 +20,20 @@ class Device_PUMP extends Component {
       this.get_eqp = this.get_eqp.bind(this);
       this.get_eqp_counters = this.get_eqp_counters.bind(this);
       this.find_ForId = this.find_ForId.bind(this);
+
       this.state = {
          RSS: this.props.RSS,
+         WS: this.props.WS + 'c',
          id: this.props.el.id,
          dev_lev2: null,
          counters: null,
+         IsOpen: false,
       };
+
       this.get_eqp();
       this.get_eqp_counters();
+
+
    }
    find_ForId(array, code) {
       for (var i = 0; i < array.length; i++) {
@@ -31,6 +43,8 @@ class Device_PUMP extends Component {
       return "неопределен";
    }
 
+
+   /********************Получить оборудование************************* */
    async get_eqp() {
       if (this.state.id != null) {
          const Id = this.state.id;
@@ -53,6 +67,7 @@ class Device_PUMP extends Component {
          }
       }
    }
+   /********************Получить счетчики***************************** */
    async get_eqp_counters() {
       if (this.state.id != null) {
          const Id = this.state.id;
@@ -75,6 +90,11 @@ class Device_PUMP extends Component {
          }
       }
    }
+   /********************Открыть WS   ********************************* */
+
+
+   /****************************************************************** */
+
 
    render() {
       let FullEQPMS = '';// "тип          = " + this.props.el.typ;
@@ -88,7 +108,7 @@ class Device_PUMP extends Component {
             let nm = item.nm;
             let fuel = item.fuel;
             let NameOil = this.find_ForId(this.props.ListFuels, fuel);
-            FullEQPMS = FullEQPMS + nm + "\n" + NameOil + "\n";
+            FullEQPMS = FullEQPMS + 'id = ' + item.id + "\n" + nm + "\n" + NameOil + "\n";
          }
       }
       /*********************************/
@@ -96,11 +116,20 @@ class Device_PUMP extends Component {
          for (const item of this.state.counters.cnt) {
             let typ = item.typ;
             let id = item.id;
-            COUNETRS = COUNETRS + id + "\n" + typ + "\n";
+
+            let op = '';
+            COUNETRS = COUNETRS + 'id = ' + id + "\ntyp = " + typ + "\n";
+            if (item != null && item.op != null) {
+               for (const iterator of item.op) {
+                  let text1 = iterator.text;
+                  let id1 = iterator.val;
+                  COUNETRS = COUNETRS + '\tid = ' + id1 + "\n\ttext = " + text1 + "\n";
+               }
+            }
          }
       }
 
-      /************************** */
+      /********* координаты для отрисовки********************* */
 
       let _W = 200;
       let _H = 90;
@@ -112,7 +141,8 @@ class Device_PUMP extends Component {
       let _Y_s = 2;
       let _X_1 = _X_s + _W_Image;
       let _Y_1 = _Y_s + 1;
-      /*************************** */
+
+      /********* координаты для отрисовки********************* */
 
       return (
          <div>
@@ -122,7 +152,9 @@ class Device_PUMP extends Component {
                RSS={this.state.RSS}
                FullNamePL={FullEQPMS}
                FullEQPMS={FullEQPMS}
+               messages={this.state.messages + " " + this.state.WS + " COUNETRS - " + COUNETRS + " FullEQPMS -" + FullEQPMS}
                counters={this.state.counters}
+               COUNETRS={COUNETRS}
                Image='/images/trk1.png'
             />
          </div>

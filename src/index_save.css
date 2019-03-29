@@ -1,0 +1,317 @@
+body {
+   margin-left: 7px;
+   margin-right: 7px;
+   padding: 0px;
+}
+
+/*****footer****/
+
+close_footer {
+   position: absolute;
+   /* Абсолютное позиционирование */
+   bottom: 15px;
+   /* Положение от нижнего края */
+   left: 10px;
+   /* Положение от правого края */
+   line-height: 10px;
+   width: 97%;
+}
+
+.f_table1 {
+   background: #ccc;
+   /* width: 100%;
+    border: 1px solid black; */
+}
+
+.f_table2 {
+   /* background: rgb(0, 255, 76);  */
+   text-align: right;
+   font-size: 9px;
+   /* 
+   width: 100%; 
+   border: 1px solid black; */
+}
+
+/*****footer****/
+
+* {
+   margin: 0;
+   padding: 0;
+}
+
+html, body {
+   height: 100%;
+}
+
+.wrapper {
+   display: flex;
+   flex-direction: column;
+   height: 94%;
+}
+
+.content {
+   flex: 70 0 auto;
+   /* flex: 1 0 auto; */
+}
+
+footer {
+   flex: 0 0 auto;
+}
+
+/*****footer****/
+
+.Def_table, .Def_button, .f_table1, .f_table2 {
+   width: 100%;
+   
+   /*background: #008B8B;
+   border: 0.3px solid black;
+   */
+}
+
+.Par_Def_table_FT {
+   /*height: 200px;*/
+   width: 100%;
+   border: 0.3px solid black;
+   height: 400px;
+}
+
+.Def_table_FT {
+   width: 100%;
+   /*
+   height: 50px;  
+   */
+   border: 0.1px solid rgb(2, 155, 155);
+}
+
+.Def_table_Pol {
+   width: 50%;
+}
+
+.Def_table_Pol {
+   width: 50%;
+}
+
+.tr_ListLeft {
+   border: 10.3px solid black;
+}
+
+th {
+   /* Шапка таблици*/
+   text-align: center;
+   /* Выравнивание по левому краю */
+   background: rgb(2, 155, 155);
+   /* Цвет фона ячеек */
+   padding: 5px;
+   /* Поля вокруг содержимого ячеек */
+   border: 0px solid black;
+   /* Граница вокруг ячеек */
+}
+
+.td_WS {
+   width: 25%;
+}
+
+td {
+   vertical-align: top;
+   min-width: 35px;
+   padding-left: 2px;
+   /*border: 1px solid black;/**/
+}
+
+/**/
+
+close_td {
+   padding: 5px;
+   /* Поля вокруг содержимого ячеек */
+   border: 1px solid black;
+   /* Граница вокруг ячеек */
+}
+
+.Def_button_Choose {
+   padding: 4px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 12px;
+   font-weight: 600;
+   width: 100%;
+   height: 27px;
+}
+
+.Def_button {
+   /*background-color: #008B8B; */
+   /*color: black;*/
+   padding: 4px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 12px;
+   font-weight: 600;
+   width: 100%;
+   height: 27px;
+   /*Скругленные углы*/
+   -webkit-border-radius: 9px;
+   -moz-border-radius: 9px;
+   border-radius: 9px;
+   background: linear-gradient( rgb(4, 231, 231), rgb(1, 107, 107)) rgb(126, 255, 255);
+   transition: 0.2s;
+   /*Тень*
+
+   -webkit-box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.2);
+   -moz-box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.2);
+   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.2);
+   /*Переход*
+   -webkit-transition: All 0.8s ease;
+   -moz-transition: All 0.8s ease;
+   -o-transition: All 0.8s ease;
+   -ms-transition: All 0.8s ease;
+   transition: All 0.8s ease;
+
+   display: inline-block;
+   color: white;
+   text-decoration: none;
+   padding: .5em 2em;
+   outline: none;
+   border-width: 2px 0;
+   border-style: solid none;
+   border-color: rgb(51, 253, 219) #000 rgb(0, 94, 97);
+   border-radius: 6px;
+   background: linear-gradient( rgb(4, 231, 231), rgb(1, 107, 107)) rgb(21, 223, 223);
+   transition: 0.2s;
+   ****/
+}
+
+/*
+.Def_button:hover {
+     height: 34px;
+   }
+*/
+
+.te_Mess {
+   font-size: 12px;
+   font-weight: 600;
+   height: 100%;
+   width: 100%;
+}
+.te_Mess_Lev {
+   font-size: 12px;
+   font-weight: 600;
+   height: 90px;
+   width: 100%;
+}
+
+.te_Mess_1 {
+   font-size: 14px;
+   font-weight: 600;
+   height: 190px;
+   width: 200px;
+}
+
+/********************Графика***************************/
+
+/*
+
+.t_Stage {
+ 
+   border: 1px solid royalblue;
+  
+}
+
+*/
+
+.NumList, .AzsList, .Fuels {
+   padding-left: 24px;
+}
+
+ul.hr {
+   margin: 0;
+   /* Обнуляем значение отступов */
+   padding: 4px;
+   /* Значение полей */
+   display: inline;
+}
+
+ul.hr li {
+   display: inline-block;
+   /* Отображать как строчный элемент */
+   margin-right: 0.15px;
+   /* Отступ слева */
+   /*border: 1px solid #000;*/
+   /* Рамка вокруг текста */
+   padding: 1.3px;
+   /* Поля вокруг текста */
+}
+
+/******************************/
+
+.btn_Image {
+   background: white;
+   width: 320px;
+}
+
+.Def_table_FT_Choose {
+   width: 100%;
+   /*background: rgb(218, 218, 218);*/
+   /*Скругленные углы*/
+   -webkit-border-radius: 19px;
+   -moz-border-radius: 19px;
+   border-radius: 19px;
+
+   border: 11.1px;
+   border-style: solid;
+
+   border-inline-start-width:3px;
+   border-inline-end-width:3px;
+
+   border-top-color: rgb(0, 197, 197);
+   border-left-color: rgb(2, 155, 155);
+   border-right-color: rgb(1, 94, 94);
+   border-bottom-color: rgb(1, 94, 94);
+
+   
+   
+
+  /* border: 4px double solid rgb(2, 155, 155);
+   padding: 10px;
+
+   border: 7.1px solid rgb(2, 155, 155);
+    background: linear-gradient( rgb(4, 231, 231), rgb(1, 107, 107)) rgb(21, 223, 223); */
+}
+
+.Def_table_FT_Not_Choose {
+   width: 100%;
+   color: rgb(75, 75, 75);
+   border: 0.1px solid rgb(2, 155, 155);
+
+   
+}
+
+.th {
+   /* Шапка таблици*/
+   text-align: center;
+   /* Выравнивание по левому краю 
+   background: rgb(2, 155, 155);*/
+   /* Цвет фона ячеек */
+   padding: 5px;
+   /* Поля вокруг содержимого ячеек */
+   border: 0.1px solid rgb(2, 155, 155);
+   /* Граница вокруг ячеек */
+}
+
+.th_AZS {
+   /* Шапка таблици*/
+   text-align: center;
+   /* Выравнивание по левому краю */
+   background:rgb(0, 197, 197);
+   /* Цвет фона ячеек */
+   padding: 5px;
+   /* Поля вокруг содержимого ячеек */
+   border: 0px solid black;
+   /* Граница вокруг ячеек */
+}
+
+
+.HeadName{
+   font-size: 16px;
+   font-weight: 600;
+}

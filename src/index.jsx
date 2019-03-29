@@ -4,13 +4,10 @@ import css from './index.css'
 
 import MainRequest from './MainRequest.jsx'   // main
 
-
-
-
 ReactDOM.render(
    <div>
       <MainRequest />
       <br />
-   </div >,
+   </div>,
    document.getElementById('root')
 );
