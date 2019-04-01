@@ -19,7 +19,7 @@ import get_Json_String from '../core/get_Json_String.jsx'
 
 
 var counter = makeCounter();
-const _Debuge = false;
+const _Debuge = true;
 
 
 
@@ -45,7 +45,7 @@ class AZS_View extends Component {
             IsOpen: false,
          };
       }
-      this.start_ws();
+      //this.start_ws();
    }
 
 
@@ -104,6 +104,7 @@ class AZS_View extends Component {
       }
    }
    stop_ws(e) {
+      
       if (this.state.IsOpen) {//(this.state.connection.readyState == 1) {
          this.state.connection.close(1000, "Hello Web Sockets!");
          this.setState({ data: null, IsOpen: false });

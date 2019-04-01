@@ -22,21 +22,23 @@ class List_Device_View extends React.Component {
       };
    }
    componentDidUpdate(prevProps) {
-      if (this.props.List !== prevProps.List) {
+      if (this.props.List != prevProps.List) {
          this.setState({ List_Devce: this.props.List.dvc, name_azs: this.props.name });
       }
    }
    Get_Device(el) {
-      switch (el.typ) {
-         case 'pl': return <Device_PL el={el} RSS={this.state.RSS} ListFuels={this.props.ListFuels} />;
-         //case 'pump': return <Device_PUMP el={el} RSS={this.state.RSS} WS={this.state.WS} ListFuels={this.props.ListFuels}/>;
-         case 'pump': return <Device_PUMP_Guns
-            el={el}
-            RSS={this.state.RSS}
-            WS={this.state.WS}
-            ListFuels={this.props.ListFuels} />;
-         case 'tso': return <Device_TSO el={el} RSS={this.state.RSS} />;
-         default: return null;
+      if (el != null && this.state.RSS != null) {
+         switch (el.typ) {
+            case 'pl': return <Device_PL el={el} RSS={this.state.RSS} ListFuels={this.props.ListFuels} />;
+            //case 'pump': return <Device_PUMP el={el} RSS={this.state.RSS} WS={this.state.WS} ListFuels={this.props.ListFuels}/>;
+            case 'pump': return <Device_PUMP_Guns
+               el={el}
+               RSS={this.state.RSS}
+               WS={this.state.WS}
+               ListFuels={this.props.ListFuels} />;
+            case 'tso': return <Device_TSO el={el} RSS={this.state.RSS} />;
+            default: return null;
+         }
       }
    }
    render() {

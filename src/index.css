@@ -92,23 +92,25 @@ th {
    /* Выравнивание по левому краю */
    text-align: center;
 
-   /*background: rgb(2, 155, 155);*/
-   background: linear-gradient( rgb(0, 253, 253), rgb(0, 83, 83)) rgb(21, 223, 223);
+   background: rgb(0, 184, 184);/**/
+   /*background: linear-gradient( rgb(0, 253, 253), rgb(0, 83, 83)) rgb(21, 223, 223);*/
 
    /* Цвет фона ячеек */
    padding: 3px;
 
    /* Поля вокруг содержимого ячеек */
    border: 0px solid black;
+   
 }
+
 td {
    vertical-align: top;
    min-width: 35px;
    padding-left: 3px;
    padding-right: 3px;
-   /*
-  border: 0.3px solid rgb(21, 223, 223);
-  */
+   
+  border: 0px solid black;
+  
 
 }
 ol{
@@ -159,6 +161,7 @@ ul.hr li{
    border-bottom-color: rgb(1, 94, 94);
 
 }
+
 .Def_table_FT_Not_Choose {
    width: 100%;
    color: rgb(70, 65, 65);

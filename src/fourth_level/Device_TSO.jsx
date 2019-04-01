@@ -15,6 +15,20 @@ class Device_TSO extends Component {
       };
       this.get_eqp();
    }
+   componentDidUpdate(prevProps) {
+      if (this.props.RSS != prevProps.RSS) {
+         this.setState({
+            RSS: this.props.RSS
+         });
+      }
+      if (this.props.dev_lev2 != prevProps.dev_lev2) {
+         this.setState({
+            dev_lev2: this.props.dev_lev2
+         });
+      }
+   }
+
+
    find_ForId(array, code) {
       for (var i = 0; i < array.length; i++) {
          if (array[i].id == code)
@@ -47,7 +61,7 @@ class Device_TSO extends Component {
    }
 
    render() {
-      let FullEQPMS ='';// "тип          = " + this.props.el.typ;
+      let FullEQPMS = '';// "тип          = " + this.props.el.typ;
 
       var NOZLS = null;
 
@@ -61,17 +75,22 @@ class Device_TSO extends Component {
       }
 
 
-
-      return (
-         <Device_View azs={this.props.el}
-            key={'Device_View ' + this.props.el.id}
-            id={'Device_View ' + this.props.el.id}
-            RSS={this.props.RSS}
-            FullNamePL={FullEQPMS}
-            FullEQPMS={FullEQPMS}
-            Image='/images/tso.jpg'
-         />
-      );
+      try {
+         return (
+            <Device_View azs={this.props.el}
+               key={'Device_TSO ' + this.props.el.id}
+               id={'Device_TSO ' + this.props.el.id}
+               RSS={this.props.RSS}
+               FullNamePL={FullEQPMS}
+               FullEQPMS={FullEQPMS}
+               Image='/images/tso.jpg'
+            />
+         );
+      }
+      catch (error) {
+         console.log(error);
+         return "Ошибка Device_PUMP_Guns";
+      }
    }
 }
 

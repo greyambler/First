@@ -18,7 +18,7 @@ class Field extends React.Component {
    }
    render() {
       return (
-         <Rect id='AZS_Rect'
+         <Rect
             width={this.state._W}
             height={this.state._H}
             x={this.state._X}
@@ -31,5 +31,9 @@ class Field extends React.Component {
       );
    }
 }
+
+/*
+ id='AZS_Rect'
+*/
 
 export default Field;

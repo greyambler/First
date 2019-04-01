@@ -23,12 +23,12 @@ class Device_View extends Component {
       }
    }
    componentDidUpdate(prevProps) {
-      if (this.props.FullNamePL !== prevProps.FullNamePL) {
+      if (this.props.FullNamePL != prevProps.FullNamePL) {
          this.setState({
             FullNamePL: this.props.FullNamePL
          });
       }
-      if (this.props.messages !== prevProps.messages && this.props.messages != "") {
+      if (this.props.messages != prevProps.messages && this.props.messages != "") {
          this.setState({
             messages: this.props.messages
          });
