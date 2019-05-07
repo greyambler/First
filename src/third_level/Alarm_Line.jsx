@@ -18,7 +18,7 @@ class Alarm_Line extends React.Component {
    }
    componentDidUpdate(prevProps) {
       let Singl_Alarm_Mas = new Array();
-      if (this.props.data !== prevProps.data) {
+      if (this.props.data != prevProps.data) {
          if (this.props.data != null) {
             var Obj = JSON.parse(this.props.data);
             for (let index = 0; index < Obj.alarms.length; index++) {
