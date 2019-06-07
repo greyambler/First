@@ -8,6 +8,9 @@
     "react-dom": "^16.8.4",
     "react-konva": "^16.8.4",
     "react-scripts": "2.1.8",
+    "react-simple-tree-menu": "^1.0.6",
+    "react-treebeard": "^3.2.3",
+    "react-ui-tree": "^4.0.0",
     "react-websocket": "^2.0.1"
   },
   "scripts": {

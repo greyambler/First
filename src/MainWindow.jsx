@@ -7,7 +7,12 @@ import Text_A from './core/Text_A.jsx'                              // first_lev
 import List_AZS_View from './third_level/List_AZS_View.jsx'
 import List_Device_View from './fourth_level/List_Device_View.jsx'  // fourth_level
 
+import './mainWindow.css'
+
 const _Debuge = false;
+
+
+
 /*
 function Dvc_s(e) {
    const List = e.List;
@@ -70,7 +75,6 @@ class MainWindow extends React.Component {
    constructor(props) {
       super(props);
       this.get_Id_AZS = this.get_Id_AZS.bind(this);
-
       this.state = {
          dvcs: null,
          nameAZS: null,
@@ -147,11 +151,11 @@ class MainWindow extends React.Component {
                         </tbody>
                      </table>
                      <center><h3>Cигнализация</h3></center>
-                     <hr />
+                     <hr /><hr />
                      <List_AZS_View id="List_AZS_View" on_Click={this.get_Id_AZS}
                         List={Objest.obList} WS={ws} address={this.state.test_mess} />
                      <center><h3>Оборудование на объекте</h3></center>
-                     <hr />
+                     <hr /><hr />
                      {this.state.dvcs != null &&
                         <List_Device_View id="List_Device_View"
                            List={this.state.dvcs}

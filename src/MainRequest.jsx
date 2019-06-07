@@ -35,7 +35,7 @@ class MainRequest extends React.Component {
       
 
       return (
-         <div>
+         <div className='WinNotTree'>
             {_Objects != null ?
                <MainWindow objects={_Objects} Rss={Rss} ws={ws} />
                :

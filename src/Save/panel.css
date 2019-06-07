@@ -1,0 +1,10 @@
+.layout { width: 980px; margin: auto; }
+.sidebar {
+ background: #C6DD7D; /* Цвет фона */
+ width: 180px; /* Ширина колонки */
+ float: right; /* Обтекание слева */
+}
+.content {
+ background: #F4ECCE; /* Цвет фона */
+ margin-right: 180px; /* Отступ справа */
+}

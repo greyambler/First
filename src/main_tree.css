@@ -1,0 +1,49 @@
+.tree_css {
+    position: fixed;
+    top: 65px;
+    left: 2px;
+    bottom: 41px;
+    width: 190px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    border: 1px solid rgb(1, 107, 107);
+    font-size: 8px;
+    
+    color: rgb(1, 107, 107);
+    /*    background-color: #21252B;
+    background: linear-gradient( rgb(4, 231, 231), rgb(1, 107, 107)) rgb(126, 255, 255);
+    */
+}
+
+.DivTreebeard {
+    width: 98%;
+    height: 98%;
+    display: inline-block;
+    vertical-align: top;
+    padding: 1px;
+    background-color:#21252B;
+    font-size: 2px;
+    font-family: Menlo;
+    
+}
+
+.m-node.placeholder {
+    border: 1px dashed #1385e5;
+}
+
+.m-node .inner {
+    /* color: #9DA5B4; */
+    font-size: 12px;
+    font-family: Menlo;
+}
+
+.m-node .node {
+    display: inline-block;
+    width: 100%;
+    padding: 4px 5px;
+}
+
+.m-node .node.is-active {
+    /* background-color: #31363F;*/
+    background-color: rgb(1, 107, 107);
+}

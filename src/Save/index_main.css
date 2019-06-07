@@ -1,0 +1,331 @@
+/*color: rgb(2, 155, 155);*/
+
+/*Селектор id                 - #test1 */
+
+/*Селектор class              - .test1 */
+
+/*Селекторы тэгов             - h      */
+
+/*Селекторы атрибутов         - [src] , [href="http://www.wisdomweb.ru"]*/
+
+/*Комбинирование селекторов   - h2.test1 , div p , div+p*/
+
+/*Группировка селекторов      - h1,h2,p*/
+
+/* Общие кнопки*/
+
+* {
+   margin: 0;
+   padding: 0;
+}
+
+html, body, textarea {
+   margin-left: 10px;
+   margin-right: 3px;
+   padding: 0px;
+   height: 100%;
+   font-size: 14px;
+   font-weight: 600;
+}
+
+table, button, footer {
+   width: 100%;
+}
+
+table {
+   border: 1px solid rgb(0, 141, 141);
+}
+
+button {
+   padding: 4px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 12px;
+   font-weight: 600;
+   width: 100%;
+   height: 27px;
+   /*Скругленные углы*/
+   -webkit-border-radius: 9px;
+   -moz-border-radius: 9px;
+   border-radius: 9px;
+   background: linear-gradient( rgb(4, 231, 231), rgb(1, 107, 107)) rgb(126, 255, 255);
+   transition: 0.2s;
+   /*Тень*/
+   -webkit-box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.2);
+   -moz-box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.2);
+   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.2);
+}
+
+/*****footer****/
+
+.wrapper {
+   display: flex;
+   flex-direction: column;
+   height: 94%;
+}
+
+.content {
+   flex: 70 0 auto;
+   /*  flex: 1 0 auto; */
+   
+}
+
+footer {
+   flex: 0 0 auto;
+}
+
+.f_table1 {
+   background: #ccc;
+   border: 0px solid rgb(0, 141, 141);
+   /* width: 100%;
+    border: 1px solid black; */
+}
+
+.f_table2 {
+   border: 0px solid rgb(0, 141, 141);
+   /* background: rgb(0, 255, 76);  */
+   text-align: right;
+   font-size: 9px;
+   /* 
+   width: 100%; 
+   border: 1px solid black; */
+}
+
+/*****footer****/
+
+th {
+   margin: 0px;
+   /* Шапка таблици*/
+   /* Выравнивание по левому краю */
+   text-align: center;
+   background: rgb(0, 184, 184);
+   /**/
+   /*background: linear-gradient( rgb(0, 253, 253), rgb(0, 83, 83)) rgb(21, 223, 223);*/
+   /* Цвет фона ячеек */
+   padding: 3px;
+   /* Поля вокруг содержимого ячеек */
+   border: 0px solid black;
+}
+
+td {
+   vertical-align: top;
+   min-width: 35px;
+   padding-left: 3px;
+   padding-right: 3px;
+   border: 0px solid black;
+}
+
+ol {
+   padding-left: 24px;
+}
+
+ul.hr {
+   margin: 0;
+   /* Обнуляем значение отступов */
+   padding: 0.4px;
+   /* Значение полей */
+   display: inline;
+}
+
+ul.hr li {
+   display: inline-block;
+   /* Отображать как строчный элемент */
+   margin-right: 0.15px;
+   /* Отступ слева */
+   /*border: 1px solid #000;*/
+   /* Рамка вокруг текста */
+   padding: 0.3px;
+   /* Поля вокруг текста */
+}
+
+.te_Mess_1 {
+   height: 190px;
+}
+
+.Def_table_FT_Choose {
+   /* width: 100%;
+  background: rgb(218, 218, 218);*/
+   /*Скругленные углы*/
+   -webkit-border-radius: 19px;
+   -moz-border-radius: 19px;
+   border-radius: 19px;
+   border: 11.1px;
+   border-style: solid;
+   border-inline-start-width: 3px;
+   border-inline-end-width: 3px;
+   border-top-color: rgb(0, 197, 197);
+   border-left-color: rgb(2, 155, 155);
+   border-right-color: rgb(1, 94, 94);
+   border-bottom-color: rgb(1, 94, 94);
+}
+
+.Def_table_FT_Not_Choose {
+   width: 100%;
+   color: rgb(70, 65, 65);
+   /*border: 0.1px solid rgb(2, 155, 155);*/
+}
+
+/**************************************************************/
+
+/*
+.Def_table, .Def_button, .f_table1, .f_table2 {
+   width: 100%;
+}
+
+.Par_Def_table_FT {
+   width: 100%;
+   border: 0.3px solid black;
+   height: 400px;
+}
+
+.Def_table_FT {
+   width: 100%;
+   border: 0.1px solid rgb(2, 155, 155);
+}
+
+.Def_table_Pol {
+   width: 50%;
+}
+
+.Def_table_Pol {
+   width: 50%;
+}
+
+.tr_ListLeft {
+   border: 10.3px solid black;
+}
+
+th {
+   text-align: center;
+   background: rgb(2, 155, 155);
+   padding: 5px;
+   border: 0px solid black;
+}
+
+.td_WS {
+   width: 25%;
+}
+
+td {
+   vertical-align: top;
+   min-width: 35px;
+   padding-left: 2px;
+}
+
+.Def_button_Choose {
+   padding: 4px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 12px;
+   font-weight: 600;
+   width: 100%;
+   height: 27px;
+}
+
+.Def_button {
+   padding: 4px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 12px;
+   font-weight: 600;
+   width: 100%;
+   height: 27px;
+
+   -webkit-border-radius: 9px;
+   -moz-border-radius: 9px;
+   border-radius: 9px;
+   background: linear-gradient( rgb(4, 231, 231), rgb(1, 107, 107)) rgb(126, 255, 255);
+   transition: 0.2s;
+}
+
+.te_Mess {
+   font-size: 12px;
+   font-weight: 600;
+   height: 100%;
+   width: 100%;
+}
+.te_Mess_Lev {
+   font-size: 12px;
+   font-weight: 600;
+   height: 90px;
+   width: 100%;
+}
+
+.te_Mess_1 {
+   font-size: 14px;
+   font-weight: 600;
+   height: 190px;
+   width: 200px;
+}
+*/
+
+/********************Графика***************************/
+
+/*
+.NumList, .AzsList, .Fuels {
+   padding-left: 24px;
+}
+
+ul.hr {
+   margin: 0;
+   padding: 4px;
+   display: inline;
+}
+
+ul.hr li {
+   display: inline-block;
+   margin-right: 0.15px;
+   padding: 1.3px;
+}
+
+.btn_Image {
+   background: white;
+   width: 320px;
+}
+
+.Def_table_FT_Choose {
+   width: 100%;
+   -webkit-border-radius: 19px;
+   -moz-border-radius: 19px;
+   border-radius: 19px;
+
+   border: 11.1px;
+   border-style: solid;
+
+   border-inline-start-width:3px;
+   border-inline-end-width:3px;
+
+   border-top-color: rgb(0, 197, 197);
+   border-left-color: rgb(2, 155, 155);
+   border-right-color: rgb(1, 94, 94);
+   border-bottom-color: rgb(1, 94, 94);
+}
+
+.Def_table_FT_Not_Choose {
+   width: 100%;
+   color: rgb(75, 75, 75);
+   border: 0.1px solid rgb(2, 155, 155);
+}
+
+.th {
+   text-align: center;
+   padding: 5px;
+   border: 0.1px solid rgb(2, 155, 155);
+}
+
+.th_AZS {
+   text-align: center;
+   background:rgb(0, 197, 197);
+   padding: 5px;
+   border: 0px solid black;
+}
+
+
+.HeadName{
+   font-size: 16px;
+   font-weight: 600;
+}
+*/
