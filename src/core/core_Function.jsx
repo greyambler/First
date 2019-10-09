@@ -275,3 +275,38 @@ export function get_Rss_ID() {
     '{"id":"d0c35750-d15b-4922-bd45-6617400c2a9e","typ":"tso","nm":"ТСО на АЗС1","prop":[]}' +
     ']}';
 }
+
+
+
+
+
+export function get_DateRSS() {
+
+  let debugeList = get_Rss_DevList();
+  let ListDev = JSON.parse(debugeList);
+  //let J_ListDev = get_ListFals(ListDev);
+  return ListDev;
+}
+
+export function get_Rss_DevList() {
+
+  return '{' +
+      '"tpList":[' +
+      '{"id":"2","nm":"резервуар"},' +
+      '{"id":"3","nm":"ТРК"},' +
+      '{"id":"5","nm":"ИБП"},' +
+      '{"id":"6","nm":"терминал самообслуживания"}' +
+      '],' +
+      '"obList":[' +
+      '{"id":"f09de2cd-56e9-4f0e-a822-232e9a7c4d0c","nm":"АЗС 81 Ярославское шоссе 15"},' +
+      '{"id":"99fa476d-e6b9-4eae-8906-8f7f0100c899","nm":"АЗС-2"}' +
+      '],' +
+      '"fuel":[' +
+      '{"id":1,"nm":"Аи-95","fu":"95"},' +
+      '{"id":2,"nm":"Аи-92","fu":"92"},' +
+      '{"id":3,"nm":"ДТ","fu":"ДТ"},' +
+      '{"id":4,"nm":"Аи-95-фрост","fu":"95ф"},' +
+      '{"id":5,"nm":"Аи-98","fu":"98"}' +
+      ']' +
+      '}';
+}

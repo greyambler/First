@@ -9,7 +9,7 @@ import Tree from './lib/react-ui-tree.js';
 
 
 
-const _Debuge = false;
+const _Debuge = true;
 
 
 

@@ -5,7 +5,7 @@ import MainRequest from './MainRequest.jsx'   // main
 import TreeExample from './TreeExample.jsx'   // tree
 import './main_tree.css';
 
-const _Debuge = true;
+const _Debuge = false;
 
 
 class Nav extends Component {
@@ -37,14 +37,23 @@ export default class App extends Component {
             <div>
                 <Nav />
                 <div className="content">
-                {_Debuge ?(
-                    <TreeExample />
-                ):(
-                    <MainTree />
-                    )}
+
+                <TreeExample />
+
                     <MainRequest />
                 </div>
             </div>
         );
     }
 }
+/*
+
+
+                    {_Debuge ? (
+                        <TreeExample />
+                    ) : (
+                            <MainTree />
+                        )}
+
+
+*/
